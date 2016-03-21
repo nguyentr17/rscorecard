@@ -20,6 +20,8 @@ This package relies on the following packages, available in CRAN:
 ## Example call
 
 ```{r}
+library(rscorecard)
+
 df <- sc_init() %>% 
     sc_filter(region == 2, ccbasic == c(21,22,23), locale == 41:43) %>% 
     sc_select(unitid, instnm, stabbr) %>% 
