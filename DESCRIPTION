@@ -3,6 +3,8 @@ Title: A method to download Department of Education College Scorecard data
 Version: 0.0.0.9000
 Authors@R: person("Benjamin", "Skinner", email = "b.skinner@vanderbilt.edu",
     role = c("aut", "cre"))
+URL: http://github.com/btskinner/rscorecard
+BugReports: http://github.com/btskinner/rscorecard/issues
 Description: A method to download Department of Education College Scorecard data
     using the using the public API interface. It is based on the dplyr model of
     piped commands to select and filter data in a single chained function call.
