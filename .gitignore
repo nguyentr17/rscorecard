@@ -1,0 +1,5 @@
+*.Rproj
+*.Rhistory
+*.DS_Store
+*.Rapp.history
+inst/doc
