@@ -1,6 +1,6 @@
 # rscorecard
 
-This package is meant to facilitate working with the U.S. Department of Education College Scorecard data in R. It is a wrapper
+This package is meant to facilitate working with the U.S. [Department of Education College Scorecard](https://collegescorecard.ed.gov) data in R. It is a wrapper
 for the Scorecard API that uses piped commands a la [`dplyr`](http://github.com/hadley/dplyr) to convert idiomatic R into the
 correct url format.
 
@@ -28,4 +28,4 @@ df <- sc_init() %>%
 df
 ```
 
-For more examples, see the vignette.
+For more examples, see the vignette. For information about the data currently available through the API, see the [data documentation](https://collegescorecard.ed.gov/assets/FullDataDocumentation.pdf) or download the [data dictionary](https://collegescorecard.ed.gov/assets/CollegeScorecardDataDictionary-09-08-2015.csv)
