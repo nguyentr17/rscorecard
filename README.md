@@ -1,6 +1,6 @@
 # rscorecard
 
-This package is meant to facilitate working with the U.S. [Department of Education College Scorecard](https://collegescorecard.ed.gov) data in R. It is a wrapper
+This package is meant to facilitate working with the [U.S. Department of Education College Scorecard](https://collegescorecard.ed.gov) data in R. It is a wrapper
 for the Scorecard API that uses piped commands a la [`dplyr`](http://github.com/hadley/dplyr) to convert idiomatic R into the
 correct url format.
 
@@ -28,4 +28,38 @@ df <- sc_init() %>%
 df
 ```
 
-For more examples, see the vignette. For information about the data currently available through the API, see the [data documentation](https://collegescorecard.ed.gov/assets/FullDataDocumentation.pdf) or download the [data dictionary](https://collegescorecard.ed.gov/assets/CollegeScorecardDataDictionary-09-08-2015.csv).
+For more example calls, see the vignette. 
+
+## Data dictionary
+
+To look up information about data elements, use the `sc_dict()` function. 
+
+```{r}
+## search variable descriptions for those containing 'tuition'
+sc_dict('tuition')
+
+## search for variable names for those starting with 'st'
+sc_dict('^st', search_col = 'varname')
+
+## print entire dictionary (not recommended)
+sc_dict('.', limit = Inf)
+```
+
+## API key
+
+Get your Data.gov API key at [https://api.data.gov/signup/]().
+Save your key in your R environment at the start of your R session using `sc_key()`:
+
+```{r}
+## use your real key in place of the Xs
+sc_key('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+```
+
+## Further references
+
+* [College Scorecard Website](https://collegescorecard.ed.gov)
+* [Data documentation](https://collegescorecard.ed.gov/assets/FullDataDocumentation.pdf) 
+* [Data dictionary [CSV]](https://collegescorecard.ed.gov/assets/CollegeScorecardDataDictionary-09-08-2015.csv)
+* Reports
+	* [Policy paper](https://collegescorecard.ed.gov/assets/BetterInformationForBetterCollegeChoiceAndInstitutionalPerformance.pdf)
+	* [Technical paper](https://collegescorecard.ed.gov/assets/UsingFederalDataToMeasureAndImprovePerformance.pdf)
