@@ -28,4 +28,4 @@ df <- sc_init() %>%
 df
 ```
 
-For more examples, see the vignette. For information about the data currently available through the API, see the [data documentation](https://collegescorecard.ed.gov/assets/FullDataDocumentation.pdf) or download the [data dictionary](https://collegescorecard.ed.gov/assets/CollegeScorecardDataDictionary-09-08-2015.csv)
+For more examples, see the vignette. For information about the data currently available through the API, see the [data documentation](https://collegescorecard.ed.gov/assets/FullDataDocumentation.pdf) or download the [data dictionary](https://collegescorecard.ed.gov/assets/CollegeScorecardDataDictionary-09-08-2015.csv).
