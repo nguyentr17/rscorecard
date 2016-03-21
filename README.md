@@ -7,7 +7,7 @@ correct url format.
 Download the development version with
 
 ```{r}
-devtools::install('btskinner/rscorecard')
+devtools::install_github('btskinner/rscorecard')
 ```
 
 This package relies on the following packages, available in CRAN:
