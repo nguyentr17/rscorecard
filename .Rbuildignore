@@ -4,3 +4,4 @@
 \.DS_Store$
 \.Rproj$
 ^README\.md$
+^.travis\.yml$
