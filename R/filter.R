@@ -22,20 +22,29 @@ sc_filter <- function(sccall, ...) {
 
     ## check first argument
     if (identical(class(try(sccall, silent = TRUE)), 'try-error')) {
-       stop('\nChain not properly initialized. ' %+%
-            'Be sure to start with sc_init().\n\n', call. = FALSE)
+        stop('\nChain not properly initialized. '
+             %+% 'Be sure to start with sc_init().\n\n', call. = FALSE)
     }
 
     ## get expressions
     filter <- lapply(lazyeval::lazy_dots(...),
                      function(x) as.list(bquote(.(x[['expr']]))))
 
-    ## confirm variables exist in dictionary
+    ## error handling
     for (i in 1:length(filter)) {
+        if (!identical(filter[[i]][[1]], as.symbol('=='))
+            && !identical(filter[[i]][[1]], as.symbol('!='))) {
+            stop('\nMust use either \"==\" or \"!=\" in sc_filter.\n\n',
+                 call. = FALSE)
+        }
+        if (length(filter[[i]]) != 3) {
+            stop('\nIncorrect filtering expression.\n\n', call. = FALSE)
+        }
         if (!sc_dict(tolower(as.character(filter[[i]][[2]])), confirm = TRUE)) {
-            stop('\nVariable \"' %+% filter[[i]][[2]] %+%
-                 '\" not found in dictionary.\n' %+%
-                 'Please check your spelling or search dictionary: ?sc_dict()\n\n')
+            stop('\nVariable \"' %+% filter[[i]][[2]]
+                 %+% '\" not found in dictionary.\n'
+                 %+% 'Please check your spelling or search dictionary: '
+                 %+% '?sc_dict()\n\n', call. = FALSE)
         }
     }
 

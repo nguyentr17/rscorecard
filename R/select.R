@@ -17,18 +17,25 @@ sc_select <- function(sccall, ...) {
 
     ## check first argument
     if (identical(class(try(sccall, silent = TRUE)), 'try-error')) {
-       stop('\nChain not properly initialized. ' %+%
-            'Be sure to start with sc_init().\n\n', call. = FALSE)
+        stop('\nChain not properly initialized. '
+             %+% 'Be sure to start with sc_init().\n\n', call. = FALSE)
     }
 
     ## get vars
     vars <- lapply(lazyeval::lazy_dots(...), function(x) bquote(.(x[['expr']])))
 
+    ## confirm has a least one variable
+    if (length(vars) < 1) {
+        stop('\nIncomplete select! You must select at least one variable.\n\n',
+             call. = FALSE)
+    }
+
     ## confirm variables exist in dictionary
     for (v in vars) {
         if (!sc_dict(tolower(as.character(v)), confirm = TRUE)) {
-            stop('\nVariable \"' %+% v %+% '\" not found in dictionary.\n' %+%
-                 'Please check your spelling or search dictionary: ?sc_dict()\n\n')
+            stop('\nVariable \"' %+% v %+% '\" not found in dictionary.\n'
+                 %+% 'Please check your spelling or search dictionary: '
+                 %+% '?sc_dict()\n\n', call. = FALSE)
         }
     }
 
