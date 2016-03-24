@@ -4,7 +4,7 @@
 \alias{sc_year}
 \title{Select scorecard data year.}
 \usage{
-sc_year(sccall = ., year)
+sc_year(sccall, year)
 }
 \arguments{
 \item{sccall}{Current list of parameters carried forward from prior
@@ -31,7 +31,9 @@ Be sure to check with the College Scorecard
 documentation report} when choosing the year.
 }
 \examples{
+\dontrun{
 sc_year()
 sc_year(2012)
+}
 }
 

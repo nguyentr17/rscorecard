@@ -13,15 +13,17 @@
 #'     the environment (DATAGOV_API_KEY).
 #'
 #' @examples
+#' \dontrun{
 #' sc_get('<API KEY IN STRING>')
 #' key <- '<API KEY IN STRING>'
 #' sc_get(key)
+#' }
 #'
 #' @section Obtain a key:
 #' To obtain an API key, visit \url{https://api.data.gov/signup}
 
 #' @export
-sc_get <- function(sccall = ., api_key) {
+sc_get <- function(sccall, api_key) {
 
     ## add year
     re <- '(=|,)(' %+% 'academics' %+|%
@@ -46,7 +48,7 @@ sc_get <- function(sccall = ., api_key) {
 
         api_key <- Sys.getenv('DATAGOV_API_KEY')
         if (identical(api_key, '')) {
-            stop('Missing API key; ?sc_key for details')
+            return(cat('Missing API key; ?sc_key for details'))
         }
     }
 
@@ -56,7 +58,8 @@ sc_get <- function(sccall = ., api_key) {
 
     ## return if no options
     if (init[['metadata']][['total']] == 0) {
-        stop('No results! Broaden your search or try different variables.')
+        return(cat('No results!' %+%
+                   'Broaden your search or try different variables.'))
     }
 
     if (init[['metadata']][['total']] > nrow(init[['results']])) {

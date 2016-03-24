@@ -15,7 +15,9 @@ This function initializes the data request. It should always be
 the first in the series of piped functions.
 }
 \examples{
+\dontrun{
 sc_init()
 sc_init(dfvars = TRUE)
+}
 }
 

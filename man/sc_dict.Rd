@@ -6,7 +6,7 @@
 \usage{
 sc_dict(search_string, search_col = c("description", "varname",
   "dev_friendly_name", "dev_category", "label"), ignore_case = TRUE,
-  limit = 10)
+  limit = 10, confirm = FALSE)
 }
 \arguments{
 \item{search_string}{Character string for search. Can use regular
@@ -15,8 +15,8 @@ expression for search. Must escape special characters,
 \code{\\\\}.}
 
 \item{search_col}{Column to search. The default column is the
-"description" column. Other options include:
-"varname", "dev_friendly_name", "dev_category", "label".}
+"description" column. Other options include: "varname",
+"dev_friendly_name", "dev_category", "label".}
 
 \item{ignore_case}{Search is case insensitive by default. Change to
 \code{FALSE} to restrict search to exact case matches.}
@@ -24,6 +24,9 @@ expression for search. Must escape special characters,
 \item{limit}{Only the first 10 dictionary items are returned by
 default. Increase to return more values. Set to \code{Inf} to
 return all items matched in search'}
+
+\item{confirm}{Use to confirm status of variable name in
+dictionary. Returns \code{TRUE} or \code{FALSE}.}
 }
 \description{
 This function is used to search the College Scorecard

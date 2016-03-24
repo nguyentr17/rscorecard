@@ -4,7 +4,7 @@
 \alias{sc_zip}
 \title{Subset results to those within specified area around zip code.}
 \usage{
-sc_zip(sccall = ., zip, distance = 25, km = FALSE)
+sc_zip(sccall, zip, distance = 25, km = FALSE)
 }
 \arguments{
 \item{sccall}{Current list of parameters carried forward from prior
@@ -21,8 +21,10 @@ in kilometers (default is \code{FALSE} for miles)}
 Subset results to those within specified area around zip code.
 }
 \examples{
+\dontrun{
 sc_zip(37203)
 sc_zip(37203, 50)
 sc_zip(37203, 50, km = TRUE)
+}
 }
 

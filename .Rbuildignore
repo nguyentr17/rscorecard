@@ -1,0 +1,6 @@
+^\.git$
+\.Rhistory$
+\.Rapp\.history$
+\.DS_Store$
+\.Rproj$
+^README\.md$

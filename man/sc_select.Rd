@@ -4,7 +4,7 @@
 \alias{sc_select}
 \title{Select scorecard data variables.}
 \usage{
-sc_select(sccall = ., ...)
+sc_select(sccall, ...)
 }
 \arguments{
 \item{sccall}{Current list of parameters carried forward from prior
@@ -16,8 +16,10 @@ functions in the chain (ignore)}
 This function is used to select the variables returned in the final dataset.
 }
 \examples{
+\dontrun{
 sc_select(UNITID)
 sc_select(UNITID, INSTNM)
 sc_select(unitid, instnm)
+}
 }
 

@@ -9,7 +9,9 @@
 #'     \url{https://api.data.gov/signup} stored in a string.
 #'
 #' @examples
+#' \dontrun{
 #' sc_key('<API KEY IN STRING>')
+#' }
 #'
 #' @section Obtain a key:
 #' To obtain an API key, visit \url{https://api.data.gov/signup}.

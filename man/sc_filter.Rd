@@ -4,7 +4,7 @@
 \alias{sc_filter}
 \title{Filter scorecard data by variable values.}
 \usage{
-sc_filter(sccall = ., ...)
+sc_filter(sccall, ...)
 }
 \arguments{
 \item{sccall}{Current list of parameters carried forward from prior
@@ -17,12 +17,13 @@ This function is used to filter the downloaded scorecard data. It
 converts idiomatic R into the format required by the API call.
 }
 \examples{
+\dontrun{
 sc_filter(region == 1) # New England institutions
-sc_filter(stabbr == c('TN','KY') # institutions in Tennessee and Kentucky
+sc_filter(stabbr == c('TN','KY')) # institutions in Tennessee and Kentucky
 sc_filter(control != 3) # exclude private, for-profit institutions
 sc_filter(control == c(1,2)) # same as above
 sc_filter(control == 1:2) # same as above
 sc_filter(stabbr == 'TN', control == 1, locale == 41:43) # TN rural publics
-
+}
 }
 

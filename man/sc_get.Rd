@@ -4,7 +4,7 @@
 \alias{sc_get}
 \title{Get scorecard data.}
 \usage{
-sc_get(sccall = ., api_key)
+sc_get(sccall, api_key)
 }
 \arguments{
 \item{sccall}{Current list of parameters carried forward from prior
@@ -26,9 +26,11 @@ that is used to get the data.
 To obtain an API key, visit \url{https://api.data.gov/signup}
 }
 \examples{
+\dontrun{
 sc_get('<API KEY IN STRING>')
 key <- '<API KEY IN STRING>'
 sc_get(key)
+}
 
 }
 

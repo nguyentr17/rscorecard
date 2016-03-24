@@ -7,8 +7,10 @@
 #'     developer-friendly variable names used in actual API call.
 #'
 #' @examples
+#' \dontrun{
 #' sc_init()
 #' sc_init(dfvars = TRUE)
+#' }
 
 #' @export
 sc_init <- function(dfvars = FALSE) {

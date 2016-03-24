@@ -8,19 +8,36 @@
 #' @param ... Expressions to evaluate
 #'
 #' @examples
+#' \dontrun{
 #' sc_filter(region == 1) # New England institutions
-#' sc_filter(stabbr == c('TN','KY') # institutions in Tennessee and Kentucky
+#' sc_filter(stabbr == c('TN','KY')) # institutions in Tennessee and Kentucky
 #' sc_filter(control != 3) # exclude private, for-profit institutions
 #' sc_filter(control == c(1,2)) # same as above
 #' sc_filter(control == 1:2) # same as above
 #' sc_filter(stabbr == 'TN', control == 1, locale == 41:43) # TN rural publics
-#'
+#' }
 
 #' @export
-sc_filter <- function(sccall = ., ...) {
+sc_filter <- function(sccall, ...) {
 
+    ## check first argument
+    if (identical(class(try(sccall, silent = TRUE)), 'try-error')) {
+       stop('\nChain not properly initialized. ' %+%
+            'Be sure to start with sc_init().\n\n', call. = FALSE)
+    }
+
+    ## get expressions
     filter <- lapply(lazyeval::lazy_dots(...),
                      function(x) as.list(bquote(.(x[['expr']]))))
+
+    ## confirm variables exist in dictionary
+    for (i in 1:length(filter)) {
+        if (!sc_dict(tolower(as.character(filter[[i]][[2]])), confirm = TRUE)) {
+            stop('\nVariable \"' %+% filter[[i]][[2]] %+%
+                 '\" not found in dictionary.\n' %+%
+                 'Please check your spelling or search dictionary: ?sc_dict()\n\n')
+        }
+    }
 
     ## convert to developer-friendly names
     if (!sccall[['dfvars']]) {

@@ -21,12 +21,27 @@
 #' documentation report} when choosing the year.
 #'
 #' @examples
+#' \dontrun{
 #' sc_year()
 #' sc_year(2012)
+#' }
 
 #' @export
-sc_year <- function(sccall = ., year) {
+sc_year <- function(sccall, year) {
 
+    ## check first argument
+    if (identical(class(try(sccall, silent = TRUE)), 'try-error')
+        || !is.list(sccall)) {
+       stop('\nChain not properly initialized. ' %+%
+            'Be sure to start with sc_init().\n\n', call. = FALSE)
+    }
+
+    ## check second argument
+    if (missing(year) || !is.numeric(year) || year < 1900 || year > 2099) {
+        stop('\nMust provide a 4-digit year in 1900s or 2000s.\n\n', call. = FALSE)
+    }
+
+    ## get vars
     sccall[['year']] <- year
     sccall
 
