@@ -82,20 +82,7 @@ df &lt;-<span class="st"> </span><span class="kw">sc_init</span>() %&gt;%<span c
 <span class="st">    </span><span class="kw">sc_select</span>(unitid, instnm, stabbr) %&gt;%<span class="st"> </span>
 <span class="st">    </span><span class="kw">sc_year</span>(<span class="dv">2013</span>) %&gt;%<span class="st"> </span>
 <span class="st">    </span><span class="kw">sc_get</span>()
-df
-<span class="co">#&gt; Source: local data frame [8 x 4]</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;   unitid                                                   instnm stabbr</span>
-<span class="co">#&gt;    (int)                                                    (chr)  (chr)</span>
-<span class="co">#&gt; 1 194392                  Paul Smiths College of Arts and Science     NY</span>
-<span class="co">#&gt; 2 191676                                         Houghton College     NY</span>
-<span class="co">#&gt; 3 196051                                Morrisville State College     NY</span>
-<span class="co">#&gt; 4 197230                                            Wells College     NY</span>
-<span class="co">#&gt; 5 191515                                         Hamilton College     NY</span>
-<span class="co">#&gt; 6 214643    Pennsylvania State University-Penn State Wilkes-Barre     PA</span>
-<span class="co">#&gt; 7 214759 Pennsylvania State University-Penn State Fayette- Eberly     PA</span>
-<span class="co">#&gt; 8 214625  Pennsylvania State University-Penn State New Kensington     PA</span>
-<span class="co">#&gt; Variables not shown: year (dbl)</span></code></pre></div>
+df</code></pre></div>
 <div id="bookend-commands" class="section level2">
 <h2>Bookend commands</h2>
 <div id="sc_init" class="section level3">
@@ -200,22 +187,7 @@ df &lt;-<span class="st"> </span><span class="kw">sc_init</span>() %&gt;%<span c
 <span class="st">    </span><span class="kw">sc_year</span>(<span class="dv">2013</span>) %&gt;%<span class="st"> </span>
 <span class="st">    </span><span class="kw">sc_zip</span>(<span class="dv">37203</span>, <span class="dv">50</span>) %&gt;%
 <span class="st">    </span><span class="kw">sc_get</span>()
-df
-<span class="co">#&gt; Source: local data frame [10 x 4]</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;    unitid                                               instnm stabbr</span>
-<span class="co">#&gt;     (int)                                                (chr)  (chr)</span>
-<span class="co">#&gt; 1  221102 Tennessee College of Applied Technology-Murfreesboro     TN</span>
-<span class="co">#&gt; 2  221184                    Nashville State Community College     TN</span>
-<span class="co">#&gt; 3  219888                     Columbia State Community College     TN</span>
-<span class="co">#&gt; 4  219602                         Austin Peay State University     TN</span>
-<span class="co">#&gt; 5  220978                    Middle Tennessee State University     TN</span>
-<span class="co">#&gt; 6  219994      Tennessee College of Applied Technology-Dickson     TN</span>
-<span class="co">#&gt; 7  222053                    Volunteer State Community College     TN</span>
-<span class="co">#&gt; 8  221838                           Tennessee State University     TN</span>
-<span class="co">#&gt; 9  220279   Tennessee College of Applied Technology-Hartsville     TN</span>
-<span class="co">#&gt; 10 248925    Tennessee College of Applied Technology-Nashville     TN</span>
-<span class="co">#&gt; Variables not shown: year (dbl)</span></code></pre></div>
+df</code></pre></div>
 </div>
 <div id="large-pull" class="section level3">
 <h3>Large pull</h3>
@@ -226,26 +198,7 @@ df &lt;-<span class="st"> </span><span class="kw">sc_init</span>() %&gt;%<span c
 <span class="st">    </span><span class="kw">sc_select</span>(unitid, instnm, md_earn_wne_p10) %&gt;%<span class="st"> </span>
 <span class="st">    </span><span class="kw">sc_year</span>(<span class="dv">2009</span>) %&gt;%
 <span class="st">    </span><span class="kw">sc_get</span>()
-<span class="co">#&gt; Large request will require: 3 additional pulls.</span>
-<span class="co">#&gt; Request chunk 1</span>
-<span class="co">#&gt; Request chunk 2</span>
-<span class="co">#&gt; Request chunk 3</span>
-df
-<span class="co">#&gt; Source: local data frame [283 x 4]</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;    unitid                                    instnm md_earn_wne_p10  year</span>
-<span class="co">#&gt;     (int)                                     (chr)           (int) (dbl)</span>
-<span class="co">#&gt; 1  191083                    Erie Community College           26600  2009</span>
-<span class="co">#&gt; 2  128780                 Charter Oak State College               0  2009</span>
-<span class="co">#&gt; 3  366395          Suffolk County Community College           38200  2009</span>
-<span class="co">#&gt; 4  434672 The Community College of Baltimore County           36200  2009</span>
-<span class="co">#&gt; 5  436836        University of Connecticut-Stamford           54500  2009</span>
-<span class="co">#&gt; 6  436818      University of Connecticut-Tri-Campus           54500  2009</span>
-<span class="co">#&gt; 7  436827     University of Connecticut-Avery Point           54500  2009</span>
-<span class="co">#&gt; 8  166513        University of Massachusetts-Lowell           50800  2009</span>
-<span class="co">#&gt; 9  166638        University of Massachusetts-Boston           46000  2009</span>
-<span class="co">#&gt; 10 166647       Massachusetts Bay Community College           40100  2009</span>
-<span class="co">#&gt; ..    ...                                       ...             ...   ...</span></code></pre></div>
+df</code></pre></div>
 </div>
 </div>
 

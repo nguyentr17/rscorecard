@@ -1,8 +1,8 @@
-#' rscorecard: A method to download College Scorecard data.
+#' rscorecard: A Method to Download College Scorecard Data.
 #'
 #' The rscorecard package provides a series of piped functions (a la
-#' \href{https://cran.r-project.org/web/packages/dplyr/index.html}{dplyr})
-#' to facilitate downloading Department of Education College Scorecard
+#' \href{http://cran.r-project.org/package=dplyr}{dplyr}) to
+#' facilitate downloading Department of Education College Scorecard
 #' data.  In reality it is simply a method for converting idiomatic R
 #' code into a properly formatted URL string that is then
 #' queried. This package requires an API key, which can be requested
