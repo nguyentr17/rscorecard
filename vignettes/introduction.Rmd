@@ -95,10 +95,6 @@ DATAGOV_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ## More examples
 
-```{r, echo = FALSE, message = FALSE}
-key <- Sys.getenv('DATAGOV_API_KEY')
-```
-
 ### Using area within zip code
 
 ```{r}
