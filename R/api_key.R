@@ -19,6 +19,11 @@
 #' @export
 sc_key <- function(api_key) {
 
+    ## check key
+    if (nchar(api_key) != 40 || !is.character(api_key)) {
+        stop('API key must be character string of length 40', call. = FALSE)
+    }
+
     Sys.setenv(DATAGOV_API_KEY = api_key)
     message('DATAGOV_API_KEY environment variable now set. ' %+%
             'You may now use sc_get() without specifying a key.')

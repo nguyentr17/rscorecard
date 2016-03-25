@@ -22,8 +22,8 @@ sc_filter <- function(sccall, ...) {
 
     ## check first argument
     if (identical(class(try(sccall, silent = TRUE)), 'try-error')) {
-        stop('\nChain not properly initialized. '
-             %+% 'Be sure to start with sc_init().\n\n', call. = FALSE)
+        stop('Chain not properly initialized. Be sure to start with sc_init().',
+             call. = FALSE)
     }
 
     ## get expressions
@@ -34,17 +34,14 @@ sc_filter <- function(sccall, ...) {
     for (i in 1:length(filter)) {
         if (!identical(filter[[i]][[1]], as.symbol('=='))
             && !identical(filter[[i]][[1]], as.symbol('!='))) {
-            stop('\nMust use either \"==\" or \"!=\" in sc_filter.\n\n',
+            stop('Must use either \"==\" or \"!=\" in sc_filter.',
                  call. = FALSE)
         }
-        if (length(filter[[i]]) != 3) {
-            stop('\nIncorrect filtering expression.\n\n', call. = FALSE)
-        }
         if (!sc_dict(tolower(as.character(filter[[i]][[2]])), confirm = TRUE)) {
-            stop('\nVariable \"' %+% filter[[i]][[2]]
-                 %+% '\" not found in dictionary.\n'
+            stop('Variable \"' %+% filter[[i]][[2]]
+                 %+% '\" not found in dictionary. '
                  %+% 'Please check your spelling or search dictionary: '
-                 %+% '?sc_dict()\n\n', call. = FALSE)
+                 %+% '?sc_dict()', call. = FALSE)
         }
     }
 

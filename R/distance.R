@@ -19,13 +19,13 @@ sc_zip <- function(sccall, zip, distance = 25, km = FALSE) {
     ## check first argument
     if (identical(class(try(sccall, silent = TRUE)), 'try-error')
         || !is.list(sccall)) {
-       stop('\nChain not properly initialized. ' %+%
-            'Be sure to start with sc_init().\n\n', call. = FALSE)
+        stop('Chain not properly initialized. Be sure to start with sc_init().',
+             call. = FALSE)
     }
 
     ## check second argument
     if (missing(zip) || !is.numeric(zip) || nchar(zip) != 5) {
-        stop('\nMust provide a 5-digit zip code.\n\n', call. = FALSE)
+        stop('Must provide a 5-digit zip code.', call. = FALSE)
     }
 
     stub <- '&_zip=' %+% zip %+% '&_distance=' %+% distance

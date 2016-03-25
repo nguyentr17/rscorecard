@@ -25,6 +25,12 @@
 #' @export
 sc_get <- function(sccall, api_key) {
 
+    ## check first argument
+    if (identical(class(try(sccall, silent = TRUE)), 'try-error')) {
+        stop('Chain not properly initialized. Be sure to start with sc_init().',
+             call. = FALSE)
+    }
+
     ## add year
     re <- '(=|,)(' %+% 'academics' %+|%
                 'admissions' %+|%
@@ -45,10 +51,9 @@ sc_get <- function(sccall, api_key) {
 
     ## check for key
     if (missing(api_key)) {
-
         api_key <- Sys.getenv('DATAGOV_API_KEY')
         if (identical(api_key, '')) {
-            return(cat('Missing API key; ?sc_key for details'))
+            stop('Missing API key; ?sc_key for details', call. = FALSE)
         }
     }
 
@@ -58,8 +63,8 @@ sc_get <- function(sccall, api_key) {
 
     ## return if no options
     if (init[['metadata']][['total']] == 0) {
-        return(cat('No results!' %+%
-                   'Broaden your search or try different variables.'))
+        stop('No results! Broaden your search or try different variables.',
+             call. = FALSE)
     }
 
     if (init[['metadata']][['total']] > nrow(init[['results']])) {
