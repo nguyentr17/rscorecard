@@ -1,6 +1,7 @@
 # rscorecard
 
 [![Build Status](https://travis-ci.org/btskinner/rscorecard.svg?branch=master)](https://travis-ci.org/btskinner/rscorecard)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/rscorecard)](http://cran.r-project.org/package=rscorecard)
 
 This package is meant to facilitate working with the [U.S. Department of Education College Scorecard](https://collegescorecard.ed.gov) data in R. It is a wrapper
 for the Scorecard API that uses piped commands a la [`dplyr`](http://github.com/hadley/dplyr) to convert idiomatic R synax into the correct url format.
