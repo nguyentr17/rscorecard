@@ -38,7 +38,7 @@ df <- sc_init() %>%
 df
 ```
 
-For more example calls, see the vignette. 
+For more example calls, see the [extended vignette](http://btskinner.me/rscorecard). 
 
 ## Data dictionary
 
