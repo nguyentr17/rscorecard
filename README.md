@@ -8,13 +8,13 @@ for the Scorecard API that uses piped commands a la [`dplyr`](http://github.com/
 
 Install the latest released version from CRAN with
 
-```{r}
+```r
 install.packages('rscorecard')
 ```
 
 Install the latest development version from Github with
 
-```{r}
+```r
 devtools::install_github('btskinner/rscorecard')
 ```
 
@@ -27,7 +27,7 @@ This package relies on the following packages, available in CRAN:
 
 ## Example call
 
-```{r}
+```r
 library(rscorecard)
 
 df <- sc_init() %>% 
@@ -44,7 +44,7 @@ For more example calls, see the [extended vignette](http://btskinner.me/rscoreca
 
 To look up information about data elements, use the `sc_dict()` function. 
 
-```{r}
+```r
 ## search variable descriptions for those containing 'tuition'
 sc_dict('tuition')
 
@@ -60,7 +60,7 @@ sc_dict('.', limit = Inf)
 Get your Data.gov API key at [https://api.data.gov/signup/]().
 Save your key in your R environment at the start of your R session using `sc_key()`:
 
-```{r}
+```r
 ## use your real key in place of the Xs
 sc_key('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
 ```
