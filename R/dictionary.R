@@ -1,4 +1,3 @@
-utils::globalVariables(c('hash'))
 #' Search data dictionary.
 #'
 #' This function is used to search the College Scorecard
