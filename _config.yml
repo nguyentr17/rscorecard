@@ -15,10 +15,6 @@ kramdown:
   syntax_highlighter: rouge
 
 highlighter:      pygments
-
-# Permalinks
 permalink:        pretty
-relative_permalinks: true
 
-paginate:         5
 
