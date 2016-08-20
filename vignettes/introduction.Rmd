@@ -2,7 +2,10 @@
 title: "Downloading Department of Education College Scorecard Data"
 author: "Benjamin Skinner"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+# output: 
+#     md_document:
+#         variant: markdown_github
+# output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{rscorecard}
   %\VignetteEngine{knitr::rmarkdown}
