@@ -1,0 +1,24 @@
+title:            rscorecard
+tagline:          'R package'
+description:      'A Method to Download Department of Education College Scorecard Data'
+url:              https://github.com/btskinner/rscorecard
+baseurl: 	  ""
+
+author:
+  name:           'Benjamin Skinner'
+  url:            https://btskinner.me
+
+# Dependencies
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+relative_permalinks: true
+
+paginate:         5
+
