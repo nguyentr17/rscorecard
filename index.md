@@ -7,11 +7,17 @@ title: rscorecard
 
 **rscorecard** is meant to facilitate working with the [U.S. Department of Education College Scorecard](https://collegescorecard.ed.gov) data in R. It is a wrapper for the Scorecard API that uses piped commands a la [`dplyr`](http://github.com/hadley/dplyr) to convert idiomatic R synax into the correct url format.
 
+# Installation
+
+## CRAN
+
 Install the latest released version from CRAN with
 
 ```r
 install.packages('rscorecard')
 ```
+
+## GitHub
 
 Install the latest development version from Github with
 
