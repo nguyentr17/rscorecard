@@ -107,7 +107,7 @@ df
 </div>
 <div id="subsetting-commands" class="section level2">
 <h2>Subsetting commands</h2>
-<p>The following commands are structured to behave like <a href="https://cran.r-project.org/package=dplyr"><code>dplyr</code></a>. They can be placed in any order in the piped command chain and each one relies (for the most part) on <a href="https://cran.r-project.org/web/packages/dplyr/vignettes/nse.html">non-standard evaluation</a> for its arguments. This means that you don’t have to quote variable names.</p>
+<p>The following commands are structured to behave like <a href="https://CRAN.R-project.org/package=dplyr"><code>dplyr</code></a>. They can be placed in any order in the piped command chain and each one relies (for the most part) on <a href="https://CRAN.R-project.org/web/packages/dplyr/vignettes/nse.html">non-standard evaluation</a> for its arguments. This means that you don’t have to quote variable names.</p>
 <div id="sc_select" class="section level3">
 <h3><code>sc_select()</code></h3>
 <p>Use <code>sc_select()</code> to select the variables (columns) you want in your final dataframe. These variables do not have to be the same as those used to filter the data and are case insensitive. Separate the variable names with commas. The Scorecard API requires that most of the variables be prepended with their category. <code>sc_select()</code> uses a hash table to do this automatically for you so you do not have to know or include those (and in fact should not). This command is the only one of the subsetting commands that is required to pull data.</p>
