@@ -82,8 +82,7 @@ sc_get <- function(sccall, api_key) {
             page_list[[i]] <- fromJSON(con)[['results']]
         }
 
-        df <- dplyr::rbind_all(page_list)
-        df <- dplyr::rbind_list(init[['results']], df)
+        df <- dplyr::bind_rows(dplyr::tbl_df(init[['results']]), page_list)
 
     } else {
 
