@@ -1,6 +1,6 @@
 Package: rscorecard
 Title: A Method to Download Department of Education College Scorecard Data
-Version: 0.2.6
+Version: 0.2.7
 Authors@R: person("Benjamin", "Skinner", email = "b.skinner@vanderbilt.edu",
     role = c("aut", "cre"))
 Author: Benjamin Skinner [aut, cre]

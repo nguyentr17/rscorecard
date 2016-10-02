@@ -7,7 +7,7 @@
 \title{rscorecard: A Method to Download College Scorecard Data.}
 \description{
 The rscorecard package provides a series of piped functions (a la
-\href{http://cran.r-project.org/package=dplyr}{dplyr}) to
+\href{https://CRAN.R-project.org/package=dplyr}{dplyr}) to
 facilitate downloading Department of Education College Scorecard
 data.  In reality it is simply a method for converting idiomatic R
 code into a properly formatted URL string that is then
