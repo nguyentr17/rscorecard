@@ -110,6 +110,7 @@ sc_get <- function(sccall, api_key) {
 
     ## add year column and return
     df[['year']] <- sccall[['year']]
+    message('Request complete!')
     df
 
 }
