@@ -43,7 +43,7 @@ Use `sc_get()` as the last command in the chain. If you haven't used `sc_key` to
 ## Subsetting commands
 
 The following commands are structured to behave like [`dplyr`](https://CRAN.R-project.org/package=dplyr). They
-can be placed in any order in the piped command chain and each one relies (for the most part) on [non-standard evaluation](https://CRAN.R-project.org/web/packages/dplyr/vignettes/nse.html) for its arguments. This means that you don't have to quote variable names.
+can be placed in any order in the piped command chain and each one relies (for the most part) on [non-standard evaluation](https://CRAN.R-project.org/package=dplyr/vignettes/nse.html) for its arguments. This means that you don't have to quote variable names.
 
 ### `sc_select()`
 
