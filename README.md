@@ -69,7 +69,7 @@ sc_key('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
 
 * [College Scorecard Website](https://collegescorecard.ed.gov)
 * [Data documentation](https://collegescorecard.ed.gov/assets/FullDataDocumentation.pdf) 
-* [Data dictionary [CSV]](https://collegescorecard.ed.gov/assets/CollegeScorecardDataDictionary-09-08-2015.csv)
+* [Data dictionary [XLS]](https://collegescorecard.ed.gov/assets/CollegeScorecardDataDictionary.xlsx)
 * Reports
 	* [Policy paper](https://collegescorecard.ed.gov/assets/BetterInformationForBetterCollegeChoiceAndInstitutionalPerformance.pdf)
 	* [Technical paper](https://collegescorecard.ed.gov/assets/UsingFederalDataToMeasureAndImprovePerformance.pdf)
