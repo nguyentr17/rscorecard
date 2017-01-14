@@ -48,12 +48,12 @@ sc_filter <- function(sccall, ...) {
     ## convert to developer-friendly names
     if (!sccall[['dfvars']]) {
         for (i in 1:length(filter)) {
-            filter[[i]][[2]] <- hash[[tolower(as.character(filter[[i]][[2]]))]]
+            filter[[i]][[2]] <- sc_hash[[tolower(as.character(filter[[i]][[2]]))]]
         }
     }
 
     ## grab categories
-    cats <- vapply(filter, function(x) { hash[[as.character(x[[2]]) %+% '_c']] },
+    cats <- vapply(filter, function(x) { sc_hash[[as.character(x[[2]]) %+% '_c']] },
                    character(1), USE.NAMES = FALSE)
 
     ## convert idiomatic R to scorecard API style

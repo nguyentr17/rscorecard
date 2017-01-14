@@ -4,7 +4,7 @@
 \alias{sc_dict}
 \title{Search data dictionary.}
 \usage{
-sc_dict(search_string, search_col = c("description", "varname",
+sc_dict(search_string, search_col = c("all", "description", "varname",
   "dev_friendly_name", "dev_category", "label"), ignore_case = TRUE,
   limit = 10, confirm = FALSE)
 }
@@ -14,8 +14,8 @@ expression for search. Must escape special characters,
 \code{. \ | ( ) [ \{ ^ $ * + ?}, with a doublebackslash
 \code{\\\\}.}
 
-\item{search_col}{Column to search. The default column is the
-"description" column. Other options include: "varname",
+\item{search_col}{Column to search. The default is to search all
+columns.  Other options include: "varname",
 "dev_friendly_name", "dev_category", "label".}
 
 \item{ignore_case}{Search is case insensitive by default. Change to

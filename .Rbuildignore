@@ -5,3 +5,5 @@
 \.Rproj$
 ^README\.md$
 ^.travis\.yml$
+^builds$
+^data-raw$

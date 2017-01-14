@@ -1,3 +1,7 @@
+# rscorecard 0.3.0
+
+* update dictionary for 13 January 2017 release of scorecard data
+
 # rscorecard 0.2.5
 
 * fixed `sc_dict()` bug that wouldn't allow for search by developer friendly names

@@ -7,8 +7,8 @@
 #'     expression for search. Must escape special characters,
 #'     \code{. \ | ( ) [ \{ ^ $ * + ?}, with a doublebackslash
 #'     \code{\\\\}.
-#' @param search_col Column to search. The default column is the
-#'     "description" column. Other options include: "varname",
+#' @param search_col Column to search. The default is to search all
+#'     columns.  Other options include: "varname",
 #'     "dev_friendly_name", "dev_category", "label".
 #' @param ignore_case Search is case insensitive by default. Change to
 #'     \code{FALSE} to restrict search to exact case matches.
@@ -25,7 +25,8 @@
 
 #' @export
 sc_dict <- function(search_string,
-                    search_col = c('description',
+                    search_col = c('all',
+                                   'description',
                                    'varname',
                                    'dev_friendly_name',
                                    'dev_category',
@@ -36,13 +37,27 @@ sc_dict <- function(search_string,
 
     ## only for confirm
     if (confirm) {
-        return(!is.null(hash[[search_string]]))
+        return(!is.null(sc_hash[[search_string]]))
     }
 
     ## get values
-    rows <- grepl(search_string,
-                  dict[[match.arg(search_col)]],
-                  ignore.case = ignore_case)
+    if (match.arg(search_col) == 'all') {
+        rows <- rep(FALSE, nrow(dict))
+        for (col in c('description',
+                      'varname',
+                      'dev_friendly_name',
+                      'dev_category',
+                      'label')) {
+            tmp_rows <- grepl(search_string,
+                              dict[[col]],
+                              ignore.case = ignore_case)
+            rows <- rows | tmp_rows     # promote to TRUE either TRUE
+        }
+    } else {
+        rows <- grepl(search_string,
+                      dict[[match.arg(search_col)]],
+                      ignore.case = ignore_case)
+    }
 
     if (all(rows == FALSE)) {
         return(cat('\nNo matches! Try again with new string or column.\n\n'))

@@ -41,12 +41,12 @@ sc_select <- function(sccall, ...) {
 
     ## convert to developer-friendly names
     if (!sccall[['dfvars']]) {
-        vars <- vapply(vars, function(x) { hash[[tolower(as.character(x))]] },
+        vars <- vapply(vars, function(x) { sc_hash[[tolower(as.character(x))]] },
                        character(1), USE.NAMES = FALSE)
     }
 
     ## grab categories
-    cats <- vapply(vars, function(x) { hash[[as.character(x) %+% '_c']] },
+    cats <- vapply(vars, function(x) { sc_hash[[as.character(x) %+% '_c']] },
                    character(1), USE.NAMES = FALSE)
 
     ## paste, clean, and return
