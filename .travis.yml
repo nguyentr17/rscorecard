@@ -1,6 +1,13 @@
 language: R
-cache: package
 sudo: false
+cache: packages
+
+
+matrix:
+  include:
+  - r: release
+  - r: oldrel
+  - r: devel
 
 env:
   global:
