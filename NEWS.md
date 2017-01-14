@@ -1,4 +1,4 @@
-# rscorecard 0.3.0
+# rscorecard 0.3.1
 
 * update dictionary for 13 January 2017 release of scorecard data
 * update `sc_dict()` to search all columns by default
