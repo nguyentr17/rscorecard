@@ -7,6 +7,8 @@ release](https://img.shields.io/github/release/btskinner/rscorecard.svg)](https:
 
 This package is an R wrapper for the [U.S. Department of Education College Scorecard](https://collegescorecard.ed.gov) API. It allows users to select and filter Scorecard variables with piped commands a la [`dplyr`](http://github.com/hadley/dplyr).
 
+### Install
+
 Install the latest released version from CRAN with
 
 ```r
@@ -18,6 +20,10 @@ Install the latest development version from Github with
 ```r
 devtools::install_github('btskinner/rscorecard')
 ```
+
+This package relies on the Scorecard data dictionary, so I will attempt to update it in a timely fashion whenever new Scorecard data are released. Because it sometimes takes a few days to get a package on CRAN, you may want to download the developmental version in the days immediately following a data update.
+
+### Dependencies
 
 This package relies on the following packages, available in CRAN:
 
