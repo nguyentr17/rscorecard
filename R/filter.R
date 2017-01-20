@@ -33,8 +33,9 @@ sc_filter <- function(sccall, ...) {
     ## error handling
     for (i in 1:length(filter)) {
         if (!identical(filter[[i]][[1]], as.symbol('=='))
-            && !identical(filter[[i]][[1]], as.symbol('!='))) {
-            stop('Must use either \"==\" or \"!=\" in sc_filter.',
+            && !identical(filter[[i]][[1]], as.symbol('!='))
+            && !identical(filter[[i]][[1]], as.symbol('%in%'))) {
+            stop('Must use either \"==\", \"!=\", or \"%in%\" in sc_filter.',
                  call. = FALSE)
         }
         if (!sc_dict(tolower(as.character(filter[[i]][[2]])), confirm = TRUE)) {
