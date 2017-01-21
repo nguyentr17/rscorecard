@@ -30,7 +30,7 @@ test_that('Error for bad variable names', {
     expect_error(sc_filter(dil, uniti == 99999))
 })
 
-ids <- c(99999, 99998)
+ids <- c(99999, 99998, 99997)
 assign('ids', ids, envir = .GlobalEnv)
 
 test_that('Symbols correctly converted', {
@@ -42,10 +42,19 @@ test_that('Symbols correctly converted', {
                  'id=99999,99998')
     ## using object from global environment
     expect_equal(sc_filter(dil, unitid == ids)[['filter']],
-                 'id=99999,99998')
+                 'id=99999,99998,99997')
     ## using object from global enviroment with %in%
     expect_equal(sc_filter(dil, unitid %in% ids)[['filter']],
+                 'id=99999,99998,99997')
+    ## using object from global enviroment: subset to one
+    expect_equal(sc_filter(dil, unitid %in% ids[1])[['filter']],
+                 'id=99999')
+    ## using object from global enviroment: subset to first two
+    expect_equal(sc_filter(dil, unitid %in% ids[1:2])[['filter']],
                  'id=99999,99998')
+    ## using object from global enviroment: subset to first and third
+    expect_equal(sc_filter(dil, unitid %in% ids[c(1,3)])[['filter']],
+                 'id=99999,99997')
     ## not equal
     expect_equal(sc_filter(dil, unitid != 99999)[['filter']],
                  'id__not=99999')

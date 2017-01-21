@@ -1,9 +1,10 @@
 
 api_convert <- function(filters) {
     ## convert rhs
-    filters[3] <- ifelse(exists(as.character(filters[[3]]),
-                                envir = globalenv()) == TRUE
-                         & sum(grepl(':', filters[[3]], fixed = TRUE)) == 0,
+    filters[3] <- ifelse(exists(gsub('(^.+)\\[.*\\]$', '\\1',
+                                     deparse(filters[[3]])),
+                                envir = globalenv()) == TRUE,
+                         # & sum(grepl(':', filters[[3]], fixed = TRUE)) == 0,
                          paste(eval(filters[[3]], envir = globalenv()),
                                collapse = ','),
                          filters[3])
