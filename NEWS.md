@@ -1,3 +1,8 @@
+# rscorecard 0.3.3
+
+### Bug fix
+* allow `sc_filter()` to use subset object vectors
+
 # rscorecard 0.3.2
 
 * allow `sc_filter()` to use vectors stored in objects
