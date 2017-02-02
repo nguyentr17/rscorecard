@@ -1,15 +1,17 @@
 Package: rscorecard
 Title: A Method to Download Department of Education College Scorecard Data
-Version: 0.3.4
+Version: 0.3.5
 Authors@R: person("Benjamin", "Skinner", email = "b.skinner@vanderbilt.edu",
     role = c("aut", "cre"))
 Maintainer: Benjamin Skinner <b.skinner@vanderbilt.edu>
 URL: http://github.com/btskinner/rscorecard
 BugReports: http://github.com/btskinner/rscorecard/issues
-Description: A method to download Department of Education College Scorecard data
-    using the public API. It is based on the dplyr model of
-    piped commands to select and filter data in a single chained function call.
-    An API key from the U.S. Department of Education is required.
+Description: A method to download Department of Education College
+     Scorecard data using the public API
+     <https://collegescorecard.ed.gov/data/documentation/>. It is based on
+     the 'dplyr' model of piped commands to select and filter data in a
+     single chained function call.  An API key from the U.S. Department of
+     Education is required.
 Depends:
     R (>= 3.2.3)
 License: MIT + file LICENSE
