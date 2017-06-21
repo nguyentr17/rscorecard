@@ -64,7 +64,7 @@ sc_dict('.', limit = Inf)
 
 ## API key
 
-Get your Data.gov API key at [https://api.data.gov/signup/]().
+Get your Data.gov API key at [https://api.data.gov/signup/](https://api.data.gov/signup/).
 Save your key in your R environment at the start of your R session using `sc_key()`:
 
 ```r
