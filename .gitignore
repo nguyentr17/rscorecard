@@ -1,5 +1,7 @@
 _site/
+.DS_Store
 .Rhistory
 R/
 builds/
 data-raw/
+tests/
