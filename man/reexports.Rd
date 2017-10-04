@@ -4,10 +4,6 @@
 \name{reexports}
 \alias{reexports}
 \alias{\%>\%}
-\alias{reexports}
-\alias{filter_}
-\alias{reexports}
-\alias{interp}
 \title{Objects exported from other packages}
 \keyword{internal}
 \description{
@@ -15,10 +11,6 @@ These objects are imported from other packages. Follow the links
 below to see their documentation.
 
 \describe{
-  \item{dplyr}{\code{\link[dplyr]{filter_}}}
-
-  \item{lazyeval}{\code{\link[lazyeval]{interp}}}
-
   \item{magrittr}{\code{\link[magrittr]{\%>\%}}}
 }}
 

@@ -71,7 +71,7 @@ sc_get <- function(sccall, api_key, debug = FALSE, print_key_debug = FALSE) {
 
         ## hide API key by default
         if (!print_key_debug) {
-            con <-  gsub('api_key=.+$', 'api_key=<...HIDDEN...>', con)
+            con <- gsub('api_key=.+$', 'api_key=<...HIDDEN...>', con)
         }
 
         ## print to stdout
@@ -86,7 +86,8 @@ sc_get <- function(sccall, api_key, debug = FALSE, print_key_debug = FALSE) {
     }
 
     ## make first GET
-    init <- fromJSON(con)
+    content <- httr::content(httr::GET(con), as = 'text', encoding = 'UTF-8')
+    init <- jsonlite::fromJSON(content)
 
     ## return if no options
     if (init[['metadata']][['total']] == 0) {
@@ -106,7 +107,8 @@ sc_get <- function(sccall, api_key, debug = FALSE, print_key_debug = FALSE) {
         for (i in 1:pages) {
             message('Request chunk ' %+% i)
             con <- url %+% '&_page=' %+% i %+% '&_per_page=100&api_key=' %+% api_key
-            page_list[[i]] <- fromJSON(con)[['results']]
+            content <- httr::content(httr::GET(con), as = 'text', encoding = 'UTF-8')
+            page_list[[i]] <- jsonlite::fromJSON(content)[['results']]
         }
 
         df <- dplyr::bind_rows(dplyr::tbl_df(init[['results']]), page_list)

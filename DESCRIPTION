@@ -17,6 +17,7 @@ Depends:
 License: MIT + file LICENSE
 LazyData: true
 Imports: dplyr,
+    httr,
     jsonlite,
     lazyeval,
     magrittr
