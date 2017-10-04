@@ -1,3 +1,12 @@
+# rscorecard 0.4.1
+
+### Bug fix
+* Changed way API call is made (now using [`httr`](https://CRAN.R-project.org/package=httr) to make call rather than `jsonlite` directly) in order to improve parsing on bad lines
+
+### Changes
+* added `debug` option to `sc_get()` so that the API URL string could be returned when debugging call
+* removed old namespace import/exports no longer being used
+
 # rscorecard 0.4.0
 
 * update dictionary for 28 September 2017 release of scorecard data
