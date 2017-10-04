@@ -23,7 +23,7 @@
 #' To obtain an API key, visit \url{https://api.data.gov/signup}
 
 #' @export
-sc_get <- function(sccall, api_key) {
+sc_get <- function(sccall, api_key, debug = FALSE, print_key_debug = FALSE) {
 
     ## check first argument
     if (identical(class(try(sccall, silent = TRUE)), 'try-error')) {
@@ -57,8 +57,29 @@ sc_get <- function(sccall, api_key) {
         }
     }
 
-    ## first GET
+    ## init connection call
     con <- url %+% '&_page=0&_per_page=100&api_key=' %+% api_key
+
+    ## if debug == TRUE, don't call but return the call
+    if (debug) {
+
+        ## hide API key by default
+        if (!print_key_debug) {
+            con <-  gsub('api_key=.+$', 'api_key=<...HIDDEN...>', con)
+        }
+
+        ## print to stdout
+        cat('\n' %+% paste(rep('', 70), collapse = '-') %+% '\n')
+        cat('API call string')
+        cat('\n' %+% paste(rep('', 70), collapse = '-') %+% '\n\n')
+        cat(con %+% '\n')
+        cat('\n' %+% paste(rep('', 70), collapse = '-') %+% '\n')
+
+        ## return
+        return(con)
+    }
+
+    ## make first GET
     init <- fromJSON(con)
 
     ## return if no options
