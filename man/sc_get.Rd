@@ -4,7 +4,7 @@
 \alias{sc_get}
 \title{Get scorecard data.}
 \usage{
-sc_get(sccall, api_key)
+sc_get(sccall, api_key, debug = FALSE, print_key_debug = FALSE)
 }
 \arguments{
 \item{sccall}{Current list of parameters carried forward from prior
@@ -15,6 +15,14 @@ functions in the chain (ignore)}
 first set your key using \code{sc_key}, then you may omit this
 parameter. A key set here will take precedence over any set in
 the environment (DATAGOV_API_KEY).}
+
+\item{debug}{Set to true to print and return API call (URL string)
+rather than make actual request. Should only be used when
+debugging calls.}
+
+\item{print_key_debug}{Only used when \code{debug == TRUE}. Default
+masks the \code{api_key} value. Set to \code{TRUE} to print the
+full API call string with the \code{api_key} unmasked.}
 }
 \description{
 This function gets the College Scorecard data by compiling and

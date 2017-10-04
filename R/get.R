@@ -11,6 +11,12 @@
 #'     first set your key using \code{sc_key}, then you may omit this
 #'     parameter. A key set here will take precedence over any set in
 #'     the environment (DATAGOV_API_KEY).
+#' @param debug Set to true to print and return API call (URL string)
+#'     rather than make actual request. Should only be used when
+#'     debugging calls.
+#' @param print_key_debug Only used when \code{debug == TRUE}. Default
+#'     masks the \code{api_key} value. Set to \code{TRUE} to print the
+#'     full API call string with the \code{api_key} unmasked.
 #'
 #' @examples
 #' \dontrun{
