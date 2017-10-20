@@ -1,9 +1,7 @@
-# rscorecard 0.4.1
-
-### Bug fix
-* Changed way API call is made (now using [`httr`](https://CRAN.R-project.org/package=httr) to make call rather than `jsonlite` directly) in order to improve parsing on bad lines
+# rscorecard 0.5.0
 
 ### Changes
+* Changed way API call is made (now using [`httr`](https://CRAN.R-project.org/package=httr) to make call rather than `jsonlite` directly) in order to improve parsing on bad lines
 * added `debug` option to `sc_get()` so that the API URL string could be returned when debugging call
 * removed old namespace import/exports no longer being used
 
