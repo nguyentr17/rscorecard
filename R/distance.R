@@ -35,24 +35,25 @@ sc_zip <- function(sccall, zip, distance = 25, km = FALSE) {
 
     ## check second argument
     if (missing(zip)) {
-        stop('Must provide a zip code.', call. = FALSE)
+        stop('Must provide a 5-digit zip code.', call. = FALSE)
     }
 
-    if (suppressWarnings(is.na(as.numeric(zip))) {
+    if (suppressWarnings(is.na(as.numeric(zip)))) {
         stop('Zip code must contain only digits.', call. = FALSE)
     }
 
     if (nchar(zip) > 5) {
-        stop('Must provide only 5-digit zip code (no ZIP+4).', call. = FALSE)
+        stop('Zip codes cannot be longer than 5 digits.', call. = FALSE)
     }
 
     if (nchar(zip) < 5) {
         zip <- sprintf('%05d', zip)
-        message('Zip code has fewer than 5 characters. Leading zero(s) added.')
+        message(paste('Note: Zip code has fewer than 5 characters.',
+                      'Leading zero(s) added.'))
     }
 
     ## check third argument
-    if (suppressWarnings(is.na(as.numeric(distance))) {
+    if (suppressWarnings(is.na(as.numeric(distance)))) {
         stop('Distance may only contain digits.', call. = FALSE)
     }
 

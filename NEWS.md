@@ -1,3 +1,10 @@
+# rscorecard 0.6.0
+
+### Changes
+* allow `sc_zip()` to take zip codes that start with zero (h/t
+  @nateaff), either with string value or by returning leading zeros to
+  numeric values that R drops
+
 # rscorecard 0.5.0
 
 ### Changes
