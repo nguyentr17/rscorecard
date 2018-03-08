@@ -6,8 +6,8 @@ Authors@R: person("Benjamin", "Skinner",
     	          role = c("aut", "cre"),
 		  comment = c(ORCID = "0000-0002-0337-7415"))
 Maintainer: Benjamin Skinner <btskinner@virginia.edu>
-URL: http://github.com/btskinner/rscorecard
-BugReports: http://github.com/btskinner/rscorecard/issues
+URL: https://github.com/btskinner/rscorecard
+BugReports: https://github.com/btskinner/rscorecard/issues
 Description: A method to download Department of Education College
      Scorecard data using the public API
      <https://collegescorecard.ed.gov/data/documentation/>. It is based on
