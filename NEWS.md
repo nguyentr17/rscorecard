@@ -1,3 +1,8 @@
+# rscorecard 0.7.1
+
+### Changes
+* update dictionary for March 2018 release of scorecard data
+
 # rscorecard 0.7.0
 
 ### Changes
