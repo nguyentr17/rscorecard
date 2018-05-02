@@ -2,7 +2,7 @@ title:            rscorecard
 tagline:          'R package'
 description:      'A Method to Download Department of Education College Scorecard Data'
 github:		  https://github.com/btskinner/rscorecard
-version:	  0.6.0
+version:	  0.7.1
 url:		  http://btskinner.me
 baseurl: 	  "/rscorecard"
 
