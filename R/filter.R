@@ -20,6 +20,41 @@
 #' @export
 sc_filter <- function(sccall, ...) {
 
+    ## get expressions
+    filter <- unlist(lapply(lazyeval::lazy_dots(...),
+                            function(x) deparse(bquote(.(x[['expr']])))),
+                     use.names = FALSE)
+
+    ## pass to _ function
+    sc_filter_(sccall, filter_string = filter)
+
+}
+
+#' @describeIn sc_filter Standard evaluation version of
+#'     \code{\link{sc_filter}} (\code{filter_string} must be a string
+#'     or vector of strings when using this version)
+#'
+#' @param filter_string Filter as character string or vector of
+#'     filters as character strings
+#'
+#' @examples
+#' \dontrun{
+#' sc_filter_('region == 1')
+#' sc_filter_('control != 3')
+#'
+#' ## With internal strings, you must either use both double and single quotes
+#' ## or escape internal quotes
+#' sc_filter_("stabbr == c('TN','KY')")
+#' sc_filter_('stabbr == c(\'TN\',\'KY\')')
+#'
+#' ## stored in object
+#' filters <- c('control == 1', 'locale == 41:43')
+#' sc_filter_(filters)
+#' }
+
+#' @export
+sc_filter_ <- function(sccall, filter_string) {
+
     ## check first argument
     if (identical(class(try(sccall, silent = TRUE)), 'try-error')) {
         stop('Chain not properly initialized. Be sure to start with sc_init().',
@@ -27,8 +62,7 @@ sc_filter <- function(sccall, ...) {
     }
 
     ## get expressions
-    filter <- lapply(lazyeval::lazy_dots(...),
-                     function(x) as.list(bquote(.(x[['expr']]))))
+    filter <- lapply(filter_string, function(x) as.list(parse(text = x)[[1]]))
 
     ## error handling
     for (i in 1:length(filter)) {
@@ -67,6 +101,5 @@ sc_filter <- function(sccall, ...) {
     sccall
 
 }
-
 
 

@@ -15,14 +15,40 @@
 #' @export
 sc_select <- function(sccall, ...) {
 
+    ## vars in ... to list
+    vars <- lapply(lazyeval::lazy_dots(...), function(x) bquote(.(x[['expr']])))
+
+    ## give to _ version
+    sc_select_(sccall, vars)
+
+}
+
+#' @describeIn sc_select Standard evaluation version of
+#'     \code{\link{sc_select}} (\code{vars} must be string or vector
+#'     of strings when using this version)
+#'
+#' @param vars Character string of variable name or vector of
+#'     character string variable names
+#'
+#' @examples
+#' \dontrun{
+#' sc_select_('UNITID')
+#' sc_select_(c('UNITID', 'INSTNM'))
+#' sc_select_(c('unitid', 'instnm'))
+#'
+#' ## stored in object
+#' vars_to_pull <- c('unitid','instnm')
+#' sc_select(vars_to_pull)
+#' }
+#'
+#' @export
+sc_select_ <- function(sccall, vars) {
+
     ## check first argument
     if (identical(class(try(sccall, silent = TRUE)), 'try-error')) {
         stop('Chain not properly initialized. '
              %+% 'Be sure to start with sc_init().', call. = FALSE)
     }
-
-    ## get vars
-    vars <- lapply(lazyeval::lazy_dots(...), function(x) bquote(.(x[['expr']])))
 
     ## confirm has a least one variable
     if (missing(vars) || length(vars) < 1) {
