@@ -75,11 +75,11 @@ sc_get <- function(sccall, api_key, debug = FALSE, print_key_debug = FALSE) {
         }
 
         ## print to stdout
-        cat('\n' %+% paste(rep('', 70), collapse = '-') %+% '\n')
-        cat('API call string')
-        cat('\n' %+% paste(rep('', 70), collapse = '-') %+% '\n\n')
-        cat(con %+% '\n')
-        cat('\n' %+% paste(rep('', 70), collapse = '-') %+% '\n')
+        message('\n', paste(rep('', 70), collapse = '-'))
+        message('API call string')
+        message(paste(rep('', 70), collapse = '-'), '\n')
+        message(con)
+        message('\n', paste(rep('', 70), collapse = '-'))
 
         ## return
         return(con)
