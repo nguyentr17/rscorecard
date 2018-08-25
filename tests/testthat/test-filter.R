@@ -68,3 +68,23 @@ test_that('Symbols correctly converted', {
     expect_equal(sc_filter(dil, ccbasic == 10:14)[['filter']],
                  'school.carnegie_basic__range=10..14')
 })
+
+## not on CRAN -----------------------------------
+
+test_that('Filtered pulls not the same', {
+    check_api()
+    df1 <- sc_init() %>%
+        sc_filter(region == 2, ccbasic == 21, locale == 41) %>%
+        sc_select(unitid) %>%
+        sc_year(2013) %>%
+        sc_get()
+
+    filter <- c('region == 2', 'ccbasic == 21', 'locale == 41')
+    df2 <- sc_init() %>%
+        sc_filter_(filter) %>%
+        sc_select(unitid) %>%
+        sc_year(2013) %>%
+        sc_get()
+
+    expect_equal(df1, df2)
+})
