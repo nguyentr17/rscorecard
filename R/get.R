@@ -86,7 +86,53 @@ sc_get <- function(sccall, api_key, debug = FALSE, print_key_debug = FALSE) {
     }
 
     ## make first GET
-    content <- httr::content(httr::GET(con), as = 'text', encoding = 'UTF-8')
+    resp <- httr::GET(con)
+
+    ## check for error
+    if (httr::http_error(con)) {
+        ## get error
+        content <- httr::content(resp, as = 'text', encoding = 'UTF-8')
+        text <- jsonlite::fromJSON(content)$errors
+        if (is.data.frame(text) && text[['error']][1] == 'field_not_found') {
+            miss_year <- c()
+            miss_name <- c()
+            for (i in 1:nrow(text)) {
+                ## get row
+                var <- text[['input']][i]
+                ## split on dot
+                var_spl <- strsplit(var, '.', fixed = TRUE)
+                ## get year of variable request
+                year <- var_spl[[1]][1]
+                ## get dev.friendly variable name
+                name <- paste(var_spl[[1]][3:length(var_spl[[1]])],collapse='.')
+                ## convert to acutal name if not using dev.friendly names
+                if (!sccall[['dfvars']]) {
+                    name <- sc_hash[[name]]
+                }
+                ## store
+                miss_year[i] <- year
+                miss_name[i] <- name
+            }
+            ## message with missing variables
+            out <- c()
+            for (i in 1:length(miss_name)) {
+                out[i] <- ' - (' %+% miss_year[i] %+% ') ' %+% miss_name[i] %+% '\n'
+            }
+            stop('Unsuccessful request:\n',
+                 'The following variables were not found in the dataset:\n\n',
+                 out, '\n',
+                 'Check that the variables are available in the selected (year).',
+                 call. = FALSE)
+        } else {
+            stop('Unsuccessful request:\n',
+                 '[ Message from httr ] ',
+                 httr::http_status(resp)[['message']],
+                 call. = FALSE)
+        }
+    }
+
+    ## make first pull
+    content <- httr::content(resp, as = 'text', encoding = 'UTF-8')
     init <- jsonlite::fromJSON(content)
 
     ## return if no options
