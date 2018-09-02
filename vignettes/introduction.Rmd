@@ -18,7 +18,7 @@ NOT_CRAN <- identical(tolower(Sys.getenv("NOT_CRAN")), "true")
 knitr::opts_chunk$set(purl = NOT_CRAN)
 ```
 
-```{r, eval = NOT_CRAN}
+```{r}
 library(rscorecard)
 df <- sc_init() %>% 
     sc_filter(region == 2, ccbasic == c(21,22,23), locale == 41:43) %>% 
@@ -100,7 +100,7 @@ DATAGOV_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ### Using area within zip code
 
-```{r, eval = NOT_CRAN}
+```{r}
 ## public schools within 50 miles of midtown Nashville, TN
 df <- sc_init() %>% 
     sc_filter(control == 1) %>% 
@@ -113,7 +113,7 @@ df
 
 ### Large pull
 
-```{r, eval = NOT_CRAN}
+```{r}
 ## median earnings for students who first enrolled in a public
 ## college in the New England or Mid-Atlantic regions: 10 years later
 df <- sc_init() %>% 

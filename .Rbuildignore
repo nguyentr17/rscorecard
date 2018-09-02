@@ -12,3 +12,4 @@
 ^sticker$
 ^_pkgdown.yml$
 ^docs$
+^vignettes/introduction.Rmd$
