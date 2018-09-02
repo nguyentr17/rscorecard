@@ -1,0 +1,23 @@
+url: https://www.btskinner.me/rscorecard/
+
+authors:
+  Benjamin Skinner:
+    href: https://www.btskinner.me
+
+reference:
+  - title: Begin and end call
+    contents:
+    - sc_init
+    - sc_get
+  - title: Select and filter variables
+    contents:
+    - matches('select')
+    - matches('filter')
+    - sc_year
+    - sc_zip
+  - title: Search data elements
+    contents:
+    - sc_dict
+  - title: Setup
+    contents:
+    - sc_key

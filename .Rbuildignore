@@ -4,6 +4,11 @@
 \.DS_Store$
 \.Rproj$
 ^README\.md$
+^README\.Rmd$
+^.Rmd$
 ^.travis\.yml$
 ^builds$
 ^data-raw$
+^sticker$
+^_pkgdown.yml$
+^docs$
