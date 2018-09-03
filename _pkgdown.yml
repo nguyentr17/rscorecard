@@ -27,11 +27,11 @@ navbar:
     - icon: fa-home
       href: index.html
     - text: 'Downloading College Scorecard Data'
-      href: rscorecard/articles/introduction.html
+      href: articles/introduction.html
   right:
     - icon: fa-file-code-o
       text: 'functions'
-      href: rscorecard/reference/index.html
+      href: reference/index.html
     - icon: fa-github fa-lg
       text: 'github'
       href: https://github.com/btskinner/rscorecard
