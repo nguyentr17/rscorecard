@@ -74,12 +74,12 @@ test_that('Symbols correctly converted', {
 test_that('Filtered pulls not the same', {
     check_api()
     df1 <- sc_init() %>%
-        sc_filter(region == 2, ccbasic == 21, locale == 41) %>%
+        sc_filter(region == 2, ccbasic == c(21,22,23), locale == 41:43) %>%
         sc_select(unitid) %>%
         sc_year(2013) %>%
         sc_get()
 
-    filter <- c('region == 2', 'ccbasic == 21', 'locale == 41')
+    filter <- c('region == 2', 'ccbasic == c(21,22,23)', 'locale == 41:43')
     df2 <- sc_init() %>%
         sc_filter_(filter) %>%
         sc_select(unitid) %>%

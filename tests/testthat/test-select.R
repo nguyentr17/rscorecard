@@ -28,14 +28,14 @@ test_that('Error for bad variable names', {
 test_that('Selected variables not the same', {
     check_api()
     df1 <- sc_init() %>%
-        sc_filter(region == 2, ccbasic == 21, locale == 41) %>%
+        sc_filter(region == 2, ccbasic == c(21,22,23), locale == 41:43) %>%
         sc_select(unitid, stabbr) %>%
         sc_year(2013) %>%
         sc_get()
 
     vars <- c('unitid', 'stabbr')
     df2 <- sc_init() %>%
-        sc_filter(region == 2, ccbasic == 21, locale == 41) %>%
+        sc_filter(region == 2, ccbasic == c(21,22,23), locale == 41:43) %>%
         sc_select_(vars) %>%
         sc_year(2013) %>%
         sc_get()

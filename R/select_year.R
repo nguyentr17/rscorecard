@@ -36,9 +36,12 @@ sc_year <- function(sccall, year) {
              call. = FALSE)
     }
 
+    ## can now allow keywork 'latest'
+
     ## check second argument
     if (missing(year) || !is.numeric(year) || year < 1900 || year > 2099) {
-        stop('Must provide a 4-digit year in 1900s or 2000s.', call. = FALSE)
+        stop('Must provide a 4-digit year in 1900s or 2000s or use the ',
+             'string \'latest\'', call. = FALSE)
     }
 
     ## get vars

@@ -10,10 +10,10 @@ test_that('Errors for non-init()', {
 test_that('Request doesn\'t match expected', {
     check_api()
 
-    df1 <- dplyr::tibble('unitid' = 191515L, 'year' = 2013)
+    df1 <- dplyr::tibble('unitid' = 196051L, 'year' = 2013)
 
     df2 <- sc_init() %>%
-        sc_filter(region == 2, ccbasic == 21, locale == 41) %>%
+        sc_filter(region == 2, ccbasic == 23, locale == 41:43) %>%
         sc_select(unitid) %>%
         sc_year(2013) %>%
         sc_get()
@@ -26,10 +26,10 @@ test_that('Debug doesn\'t return string', {
     check_api()
 
     out <- sc_init() %>%
-                  sc_filter(region == 2, ccbasic == 21, locale == 41) %>%
-                  sc_select(unitid) %>%
-                  sc_year(2013) %>%
-                  sc_get(debug = TRUE)
+        sc_filter(region == 2, ccbasic == 21, locale == 41) %>%
+        sc_select(unitid) %>%
+        sc_year(2013) %>%
+        sc_get(debug = TRUE)
 
     call <- 'https://api.data.gov/ed/collegescorecard/v1/' %+%
         'schools.json?school.region_id=2&school.carnegie_basic' %+%
