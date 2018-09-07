@@ -38,3 +38,30 @@ test_that('Debug doesn\'t return string', {
 
     expect_equal(out, call)
 })
+
+
+test_that('Doesn\'t return correct string using latest', {
+    check_api()
+
+    out1 <- sc_init() %>%
+        sc_filter(region == 2, ccbasic == 21, locale == 41) %>%
+        sc_select(unitid, ugds_white, ugds_black, ugds_asian) %>%
+        sc_get(debug = TRUE)
+
+    out2 <- sc_init() %>%
+        sc_filter(region == 2, ccbasic == 21, locale == 41) %>%
+        sc_select(unitid, ugds_white, ugds_black, ugds_asian) %>%
+        sc_year('latest') %>%
+        sc_get(debug = TRUE)
+
+    call <- 'https://api.data.gov/ed/collegescorecard/v1/' %+%
+        'schools.json?school.region_id=2&school.carnegie_basic=21' %+%
+        '&school.locale=41&_fields=id,latest.student.demographics.' %+%
+        'race_ethnicity.white,latest.student.demographics.race_ethnicity.' %+%
+        'black,latest.student.demographics.race_ethnicity.asian&_page=0' %+%
+        '&_per_page=100&api_key=<...HIDDEN...>'
+
+    expect_equal(out1, out2)
+    expect_equal(out1, call)
+    expect_equal(out2, call)
+})
