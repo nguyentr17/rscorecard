@@ -72,6 +72,7 @@ test_that('Symbols correctly converted', {
 ## not on CRAN -----------------------------------
 
 test_that('Filtered pulls not the same', {
+    check_api()
     df1 <- sc_init() %>%
         sc_filter(region == 2, ccbasic == c(21,22,23), locale == 41:43) %>%
         sc_select(unitid) %>%

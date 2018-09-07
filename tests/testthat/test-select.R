@@ -26,6 +26,7 @@ test_that('Error for bad variable names', {
 ## not on CRAN -----------------------------------
 
 test_that('Selected variables not the same between lazyeval and _ version', {
+    check_api()
     df1 <- sc_init() %>%
         sc_filter(region == 2, ccbasic == c(21,22,23), locale == 41:43) %>%
         sc_select(unitid, stabbr) %>%
@@ -43,6 +44,7 @@ test_that('Selected variables not the same between lazyeval and _ version', {
 })
 
 test_that('Select helper starts_with() not working with variable names', {
+    check_api()
     expect_type(sc_init() %>%
                 sc_filter(region == 2,
                           ccbasic == c(21,22,23),
@@ -53,6 +55,7 @@ test_that('Select helper starts_with() not working with variable names', {
 })
 
 test_that('Select helper ends_with() not working with variable names', {
+    check_api()
     expect_type(sc_init() %>%
                 sc_filter(region == 2,
                           ccbasic == c(21,22,23),
@@ -63,6 +66,7 @@ test_that('Select helper ends_with() not working with variable names', {
 })
 
 test_that('Select helper matches() not working with variable names', {
+    check_api()
     expect_type(sc_init() %>%
                 sc_filter(region == 2,
                           ccbasic == c(21,22,23),
@@ -73,6 +77,7 @@ test_that('Select helper matches() not working with variable names', {
 })
 
 test_that('Select helper contains() not working with variable names', {
+    check_api()
     expect_type(sc_init() %>%
                 sc_filter(region == 2,
                           ccbasic == c(21,22,23),
