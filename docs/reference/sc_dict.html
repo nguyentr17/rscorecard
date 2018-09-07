@@ -64,7 +64,7 @@ data dictionary." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rscorecard</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.8.0</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.9.0</span>
       </span>
     </div>
 
@@ -87,6 +87,13 @@ data dictionary." />
     <span class="fa fa-file-code-o"></span>
      
     functions
+  </a>
+</li>
+<li>
+  <a href="../news/index.html">
+    <span class="fa fa-newspaper-o"></span>
+     
+    news
   </a>
 </li>
 <li>
@@ -1155,6 +1162,9 @@ dictionary. Returns <code>TRUE</code> or <code>FALSE</code>.</p></td>
 #&gt; 101 = Ecumenical Christian
 #&gt; 102 = Evangelical Christian
 #&gt; 103 = Presbyterian
+#&gt; 105 = General Baptist
+#&gt; 106 = Muslim
+#&gt; 107 = Plymouth Brethren
 #&gt; 
 #&gt; 
 #&gt; ---------------------------------------------------------------------
@@ -27916,7 +27926,317 @@ dictionary. Returns <code>TRUE</code> or <code>FALSE</code>.</p></td>
 #&gt; 
 #&gt; VALUES: NA
 #&gt; 
-#&gt; Printed information for 1816 of out 1816 variables.
+#&gt; 
+#&gt; ---------------------------------------------------------------------
+#&gt; varname: c100_4_pooled                           category: completion
+#&gt; ---------------------------------------------------------------------
+#&gt; DEVELOPER FRIENDLY NAME:
+#&gt; 
+#&gt; completion_rate_four_year_100_pooled
+#&gt; 
+#&gt; DESCRIPTION:
+#&gt; 
+#&gt; Completion rate for first-time, full-time students at four-year
+#&gt;  institutions (100% of expected time to completion), pooled for
+#&gt;  rolling averages
+#&gt; 
+#&gt; VALUES: NA
+#&gt; 
+#&gt; 
+#&gt; ---------------------------------------------------------------------
+#&gt; varname: c100_l4_pooled                          category: completion
+#&gt; ---------------------------------------------------------------------
+#&gt; DEVELOPER FRIENDLY NAME:
+#&gt; 
+#&gt; completion_rate_lt_four_year_100_pooled
+#&gt; 
+#&gt; DESCRIPTION:
+#&gt; 
+#&gt; Completion rate for first-time, full-time students at
+#&gt;  less-than-four-year institutions (100% of expected time to
+#&gt;  completion), pooled for rolling averages
+#&gt; 
+#&gt; VALUES: NA
+#&gt; 
+#&gt; 
+#&gt; ---------------------------------------------------------------------
+#&gt; varname: d100_4_pooled                           category: completion
+#&gt; ---------------------------------------------------------------------
+#&gt; DEVELOPER FRIENDLY NAME:
+#&gt; 
+#&gt; completion_cohort_four_year_100_pooled
+#&gt; 
+#&gt; DESCRIPTION:
+#&gt; 
+#&gt; Adjusted cohort count for completion rate at four-year institutions
+#&gt;  (denominator of 100% completion rate), pooled for rolling averages
+#&gt; 
+#&gt; VALUES: NA
+#&gt; 
+#&gt; 
+#&gt; ---------------------------------------------------------------------
+#&gt; varname: d100_l4_pooled                          category: completion
+#&gt; ---------------------------------------------------------------------
+#&gt; DEVELOPER FRIENDLY NAME:
+#&gt; 
+#&gt; completion_cohort_lt_four_year_100_pooled
+#&gt; 
+#&gt; DESCRIPTION:
+#&gt; 
+#&gt; Adjusted cohort count for completion rate at less-than-four-year
+#&gt;  institutions (denominator of 100% completion rate), pooled for
+#&gt;  rolling averages
+#&gt; 
+#&gt; VALUES: NA
+#&gt; 
+#&gt; 
+#&gt; ---------------------------------------------------------------------
+#&gt; varname: poolyrs100                              category: completion
+#&gt; ---------------------------------------------------------------------
+#&gt; DEVELOPER FRIENDLY NAME:
+#&gt; 
+#&gt; pooled_yrs_used_100
+#&gt; 
+#&gt; DESCRIPTION:
+#&gt; 
+#&gt; Years used for rolling averages of completion rate C100_[4/L4]_POOLED
+#&gt; 
+#&gt; VALUES: NA
+#&gt; 
+#&gt; 
+#&gt; ---------------------------------------------------------------------
+#&gt; varname: c100_4_pooled_supp                      category: completion
+#&gt; ---------------------------------------------------------------------
+#&gt; DEVELOPER FRIENDLY NAME:
+#&gt; 
+#&gt; rate_suppressed.four_year_100_pooled
+#&gt; 
+#&gt; DESCRIPTION:
+#&gt; 
+#&gt; Completion rate for first-time, full-time students at four-year
+#&gt;  institutions (100% of expected time to completion), pooled for
+#&gt;  rolling averages and suppressed for small n size.
+#&gt; 
+#&gt; VALUES: NA
+#&gt; 
+#&gt; 
+#&gt; ---------------------------------------------------------------------
+#&gt; varname: c100_l4_pooled_supp                     category: completion
+#&gt; ---------------------------------------------------------------------
+#&gt; DEVELOPER FRIENDLY NAME:
+#&gt; 
+#&gt; rate_suppressed.lt_four_year_100_pooled
+#&gt; 
+#&gt; DESCRIPTION:
+#&gt; 
+#&gt; Completion rate for first-time, full-time students at
+#&gt;  less-than-four-year institutions (100% of expected time to
+#&gt;  completion), pooled for rolling averages and suppressed for small n
+#&gt;  size.
+#&gt; 
+#&gt; VALUES: NA
+#&gt; 
+#&gt; 
+#&gt; ---------------------------------------------------------------------
+#&gt; varname: c150_4_pell                             category: completion
+#&gt; ---------------------------------------------------------------------
+#&gt; DEVELOPER FRIENDLY NAME:
+#&gt; 
+#&gt; completion_rate_four_year_150_pell
+#&gt; 
+#&gt; DESCRIPTION:
+#&gt; 
+#&gt; Completion rate for first-time, full-time students receiving a Pell
+#&gt;  Grant during their first year of college at four-year institutions
+#&gt;  (150% of expected time to completion)
+#&gt; 
+#&gt; VALUES: NA
+#&gt; 
+#&gt; 
+#&gt; ---------------------------------------------------------------------
+#&gt; varname: d150_4_pell                             category: completion
+#&gt; ---------------------------------------------------------------------
+#&gt; DEVELOPER FRIENDLY NAME:
+#&gt; 
+#&gt; completion_cohort_four_year_150_pell
+#&gt; 
+#&gt; DESCRIPTION:
+#&gt; 
+#&gt; Adjusted cohort count for Pell Grant recipient completion rate at
+#&gt;  four-year institutions (denominator of 150% Pell Grant recipient
+#&gt;  completion rate)
+#&gt; 
+#&gt; VALUES: NA
+#&gt; 
+#&gt; 
+#&gt; ---------------------------------------------------------------------
+#&gt; varname: c150_l4_pell                            category: completion
+#&gt; ---------------------------------------------------------------------
+#&gt; DEVELOPER FRIENDLY NAME:
+#&gt; 
+#&gt; completion_rate_lt_four_year_150_pell
+#&gt; 
+#&gt; DESCRIPTION:
+#&gt; 
+#&gt; Completion rate for first-time, full-time students receiving a Pell
+#&gt;  Grant during their first year of college at less-than-four-year
+#&gt;  institutions (150% of expected time to completion)
+#&gt; 
+#&gt; VALUES: NA
+#&gt; 
+#&gt; 
+#&gt; ---------------------------------------------------------------------
+#&gt; varname: d150_l4_pell                            category: completion
+#&gt; ---------------------------------------------------------------------
+#&gt; DEVELOPER FRIENDLY NAME:
+#&gt; 
+#&gt; completion_cohort_lt_four_year_150_pell
+#&gt; 
+#&gt; DESCRIPTION:
+#&gt; 
+#&gt; Adjusted cohort count for Pell Grant recipient completion rate at
+#&gt;  less-than-four-year institutions (denominator of 150% Pell Grant
+#&gt;  recipient completion rate)
+#&gt; 
+#&gt; VALUES: NA
+#&gt; 
+#&gt; 
+#&gt; ---------------------------------------------------------------------
+#&gt; varname: c150_4_loannopell                       category: completion
+#&gt; ---------------------------------------------------------------------
+#&gt; DEVELOPER FRIENDLY NAME:
+#&gt; 
+#&gt; completion_rate_four_year_150_loan_nopell
+#&gt; 
+#&gt; DESCRIPTION:
+#&gt; 
+#&gt; Completion rate for first-time, full-time students receiving a Direct
+#&gt;  Subsidized Loan but not a Pell Grant during their first year of
+#&gt;  college at four-year institutions (150% of expected time to
+#&gt;  completion)
+#&gt; 
+#&gt; VALUES: NA
+#&gt; 
+#&gt; 
+#&gt; ---------------------------------------------------------------------
+#&gt; varname: d150_4_loannopell                       category: completion
+#&gt; ---------------------------------------------------------------------
+#&gt; DEVELOPER FRIENDLY NAME:
+#&gt; 
+#&gt; completion_cohort_four_year_150_loan_nopell
+#&gt; 
+#&gt; DESCRIPTION:
+#&gt; 
+#&gt; Adjusted cohort count for Direct Subsidized Loan recipients who did
+#&gt;  not receive a Pell Grant completion rate at four-year institutions
+#&gt;  (denominator of 150% Direct Subsidized Loan recipient who did not
+#&gt;  receive a Pell Grant completion rate)
+#&gt; 
+#&gt; VALUES: NA
+#&gt; 
+#&gt; 
+#&gt; ---------------------------------------------------------------------
+#&gt; varname: c150_l4_loannopell                      category: completion
+#&gt; ---------------------------------------------------------------------
+#&gt; DEVELOPER FRIENDLY NAME:
+#&gt; 
+#&gt; completion_rate_lt_four_year_150_loan_nopell
+#&gt; 
+#&gt; DESCRIPTION:
+#&gt; 
+#&gt; Completion rate for first-time, full-time students receiving a Direct
+#&gt;  Subsidized Loan but not a Pell Grant during their first year of
+#&gt;  college at less-than-four-year institutions (150% of expected time to
+#&gt;  completion)
+#&gt; 
+#&gt; VALUES: NA
+#&gt; 
+#&gt; 
+#&gt; ---------------------------------------------------------------------
+#&gt; varname: d150_l4_loannopell                      category: completion
+#&gt; ---------------------------------------------------------------------
+#&gt; DEVELOPER FRIENDLY NAME:
+#&gt; 
+#&gt; completion_cohort_lt_four_year_150_loan_nopell
+#&gt; 
+#&gt; DESCRIPTION:
+#&gt; 
+#&gt; Adjusted cohort count for Direct Subsidized Loan recipients who did
+#&gt;  not receive a Pell Grant completion rate at less-than-four-year
+#&gt;  institutions (denominator of 150% Direct Subsidized Loan recipient
+#&gt;  who did not receive a Pell Grant completion rate)
+#&gt; 
+#&gt; VALUES: NA
+#&gt; 
+#&gt; 
+#&gt; ---------------------------------------------------------------------
+#&gt; varname: c150_4_noloannopell                     category: completion
+#&gt; ---------------------------------------------------------------------
+#&gt; DEVELOPER FRIENDLY NAME:
+#&gt; 
+#&gt; completion_rate_four_year_150_noloan_nopell
+#&gt; 
+#&gt; DESCRIPTION:
+#&gt; 
+#&gt; Completion rate for first-time, full-time students receiving neither
+#&gt;  a Direct Subsidized Loan or a Pell Grant during their first year of
+#&gt;  college at four-year institutions (150% of expected time to
+#&gt;  completion)
+#&gt; 
+#&gt; VALUES: NA
+#&gt; 
+#&gt; 
+#&gt; ---------------------------------------------------------------------
+#&gt; varname: d150_4_noloannopell                     category: completion
+#&gt; ---------------------------------------------------------------------
+#&gt; DEVELOPER FRIENDLY NAME:
+#&gt; 
+#&gt; completion_cohort_four_year_150_noloan_nopell
+#&gt; 
+#&gt; DESCRIPTION:
+#&gt; 
+#&gt; Adjusted cohort count for those who did not receive a Direct
+#&gt;  Subsidized Loan or a Pell Grant completion rate at four-year
+#&gt;  institutions (denominator of 150% did not receive a Direct Subsidized
+#&gt;  Loan or Pell Grant completion rate)
+#&gt; 
+#&gt; VALUES: NA
+#&gt; 
+#&gt; 
+#&gt; ---------------------------------------------------------------------
+#&gt; varname: c150_l4_noloannopell                    category: completion
+#&gt; ---------------------------------------------------------------------
+#&gt; DEVELOPER FRIENDLY NAME:
+#&gt; 
+#&gt; completion_rate_lt_four_year_150_noloan_nopell
+#&gt; 
+#&gt; DESCRIPTION:
+#&gt; 
+#&gt; Completion rate for first-time, full-time students receiving neither
+#&gt;  a Direct Subsidized Loan or a Pell Grant during their first year of
+#&gt;  college at less-than-four-year institutions (150% of expected time to
+#&gt;  completion)
+#&gt; 
+#&gt; VALUES: NA
+#&gt; 
+#&gt; 
+#&gt; ---------------------------------------------------------------------
+#&gt; varname: d150_l4_noloannopell                    category: completion
+#&gt; ---------------------------------------------------------------------
+#&gt; DEVELOPER FRIENDLY NAME:
+#&gt; 
+#&gt; completion_cohort_lt_four_year_150_noloan_nopell
+#&gt; 
+#&gt; DESCRIPTION:
+#&gt; 
+#&gt; Adjusted cohort count for those who did not receive a Direct
+#&gt;  Subsidized Loan or a Pell Grant completion rate at
+#&gt;  less-than-four-year institutions (denominator of 150% did not receive
+#&gt;  a Direct Subsidized Loan or Pell Grant completion rate)
+#&gt; 
+#&gt; VALUES: NA
+#&gt; 
+#&gt; Printed information for 1835 of out 1835 variables.
 #&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
