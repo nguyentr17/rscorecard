@@ -25,20 +25,101 @@ test_that('Error for bad variable names', {
 
 ## not on CRAN -----------------------------------
 
-test_that('Selected variables not the same', {
+test_that('Selected variables not the same between lazyeval and _ version', {
     check_api()
     df1 <- sc_init() %>%
-        sc_filter(region == 2, ccbasic == 21, locale == 41) %>%
+        sc_filter(region == 2, ccbasic == c(21,22,23), locale == 41:43) %>%
         sc_select(unitid, stabbr) %>%
         sc_year(2013) %>%
         sc_get()
 
     vars <- c('unitid', 'stabbr')
     df2 <- sc_init() %>%
-        sc_filter(region == 2, ccbasic == 21, locale == 41) %>%
+        sc_filter(region == 2, ccbasic == c(21,22,23), locale == 41:43) %>%
         sc_select_(vars) %>%
         sc_year(2013) %>%
         sc_get()
 
     expect_equal(df1, df2)
+})
+
+test_that('Select helper starts_with() not working with variable names', {
+    check_api()
+    df1 <- sc_init() %>%
+        sc_filter(region == 2, ccbasic == c(21,22,23), locale == 41:43) %>%
+        sc_select(starts_with('ugds')) %>%
+        sc_get()
+
+    vars <- c('ugds_aianold','ugds_nra','ugds_2mor','ugds','ugds_men',
+              'ugds_women','ugds_black','ugds_aian','ugds_nhpi','ugds_blacknh',
+              'ugds_hisp','ugds_asian','ugds_unkn','ugds_api','ugds_white',
+              'ugds_whitenh','ugds_hispold')
+
+    df2 <- sc_init() %>%
+        sc_filter(region == 2, ccbasic == c(21,22,23), locale == 41:43) %>%
+        sc_select_(vars) %>%
+        sc_get()
+
+    expect_equal(df1, df2)
+
+})
+
+test_that('Select helper ends_with() not working with variable names', {
+    check_api()
+    df1 <- sc_init() %>%
+        sc_filter(region == 2, ccbasic == c(21,22,23), locale == 41:43) %>%
+        sc_select(ends_with('_hisp')) %>%
+        sc_get()
+
+    vars <- c('ugds_hisp','d150_4_hisp','c150_4_hisp','c150_l4_hisp','d150_l4_hisp')
+
+    df2 <- sc_init() %>%
+        sc_filter(region == 2, ccbasic == c(21,22,23), locale == 41:43) %>%
+        sc_select_(vars) %>%
+        sc_get()
+
+    expect_equal(df1, df2)
+
+})
+
+test_that('Select helper matches() not working with variable names', {
+    check_api()
+    df1 <- sc_init() %>%
+        sc_filter(region == 2, ccbasic == c(21,22,23), locale == 41:43) %>%
+        sc_select(matches('ugds')) %>%
+        sc_get()
+
+    vars <- c('ugds_aianold','ugds_nra','ugds_2mor','ugds','ugds_men',
+              'ugds_women','ugds_black','ugds_aian','ugds_nhpi','ugds_blacknh',
+              'ugds_hisp','ugds_asian','ugds_unkn','ugds_api','ugds_white',
+              'ugds_whitenh','ugds_hispold')
+
+    df2 <- sc_init() %>%
+        sc_filter(region == 2, ccbasic == c(21,22,23), locale == 41:43) %>%
+        sc_select_(vars) %>%
+        sc_get()
+
+    expect_equal(df1, df2)
+
+})
+
+test_that('Select helper contains() not working with variable names', {
+    check_api()
+    df1 <- sc_init() %>%
+        sc_filter(region == 2, ccbasic == c(21,22,23), locale == 41:43) %>%
+        sc_select(contains('ugds')) %>%
+        sc_get()
+
+    vars <- c('ugds_aianold','ugds_nra','ugds_2mor','ugds','ugds_men',
+              'ugds_women','ugds_black','ugds_aian','ugds_nhpi','ugds_blacknh',
+              'ugds_hisp','ugds_asian','ugds_unkn','ugds_api','ugds_white',
+              'ugds_whitenh','ugds_hispold')
+
+    df2 <- sc_init() %>%
+        sc_filter(region == 2, ccbasic == c(21,22,23), locale == 41:43) %>%
+        sc_select_(vars) %>%
+        sc_get()
+
+    expect_equal(df1, df2)
+
 })

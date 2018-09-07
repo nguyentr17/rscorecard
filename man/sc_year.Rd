@@ -10,7 +10,7 @@ sc_year(sccall, year)
 \item{sccall}{Current list of parameters carried forward from prior
 functions in the chain (ignore)}
 
-\item{year}{Four-digit year (default is 2013)}
+\item{year}{Four-digit year or string \code{latest} for latest data.}
 }
 \description{
 This function is used to select the year of the data.
@@ -33,7 +33,8 @@ documentation report} when choosing the year.
 
 \examples{
 \dontrun{
-sc_year()
+sc_year() # latest
+sc_year('latest')
 sc_year(2012)
 }
 }

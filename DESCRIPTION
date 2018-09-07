@@ -1,6 +1,6 @@
 Package: rscorecard
 Title: A Method to Download Department of Education College Scorecard Data
-Version: 0.8.0
+Version: 0.9.0
 Authors@R: person("Benjamin", "Skinner",
 	          email = "btskinner@virginia.edu",
     	          role = c("aut", "cre"),
@@ -22,7 +22,8 @@ Imports: dplyr,
     httr,
     jsonlite,
     lazyeval,
-    magrittr
+    magrittr,
+    tidyselect
 RoxygenNote: 6.1.0
 Encoding: UTF-8
 Suggests: knitr,

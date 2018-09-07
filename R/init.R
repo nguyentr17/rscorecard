@@ -19,6 +19,6 @@ sc_init <- function(dfvars = FALSE) {
          'select' = NULL,
          'filter' = NULL,
          'zip' = NULL,
-         'year' = 2013)
+         'year' = 'latest')
 
 }
