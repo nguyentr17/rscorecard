@@ -23,8 +23,6 @@ test_that('Request doesn\'t match expected', {
 })
 
 test_that('Debug doesn\'t return string', {
-    check_api()
-
     out <- sc_init() %>%
         sc_filter(region == 2, ccbasic == 21, locale == 41) %>%
         sc_select(unitid) %>%
