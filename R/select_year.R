@@ -4,7 +4,7 @@
 #'
 #' @param sccall Current list of parameters carried forward from prior
 #'     functions in the chain (ignore)
-#' @param year Four-digit year (default is 2013)
+#' @param year Four-digit year or string \code{latest} for latest data.
 #'
 #' @section Important notes:
 #' \enumerate{
@@ -22,7 +22,8 @@
 #'
 #' @examples
 #' \dontrun{
-#' sc_year()
+#' sc_year() # latest
+#' sc_year('latest')
 #' sc_year(2012)
 #' }
 
@@ -36,16 +37,17 @@ sc_year <- function(sccall, year) {
              call. = FALSE)
     }
 
-    ## can now allow keywork 'latest'
-
     ## check second argument
-    if (missing(year) || !is.numeric(year) || year < 1900 || year > 2099) {
+    if (missing(year)
+        || (!is.character(year) && !is.numeric(year))
+        || (is.character(year) && tolower(year) != 'latest')
+        || (is.numeric(year) && (year < 1900 || year > 2099))) {
         stop('Must provide a 4-digit year in 1900s or 2000s or use the ',
-             'string \'latest\'', call. = FALSE)
+             'string \'latest\'.', call. = FALSE)
     }
 
     ## get vars
-    sccall[['year']] <- year
+    sccall[['year']] <- ifelse(is.character(year), tolower(year), year)
     sccall
 
 }

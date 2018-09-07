@@ -168,7 +168,7 @@ sc_get <- function(sccall, api_key, debug = FALSE, print_key_debug = FALSE) {
     ## convert names back to non-developer-friendly names and return
     if (!sccall[['dfvars']]) {
         names(df) <- vapply(names(df), function(x) {
-            re <- '^[0-9]{0,4}\\.?(' %+% 'academics' %+|%
+            re <- '^latest|[0-9]{0,4}\\.?(' %+% 'academics' %+|%
                          'admissions' %+|%
                          'aid' %+|%
                          'completion' %+|%
