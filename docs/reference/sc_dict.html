@@ -64,7 +64,7 @@ data dictionary." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rscorecard</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.9.0</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.10.0</span>
       </span>
     </div>
 
@@ -6894,6 +6894,68 @@ dictionary. Returns <code>TRUE</code> or <code>FALSE</code>.</p></td>
 #&gt; 
 #&gt; 
 #&gt; ---------------------------------------------------------------------
+#&gt; varname: c200_4                                  category: completion
+#&gt; ---------------------------------------------------------------------
+#&gt; DEVELOPER FRIENDLY NAME:
+#&gt; 
+#&gt; completion_rate_4yr_200nt
+#&gt; 
+#&gt; DESCRIPTION:
+#&gt; 
+#&gt; Completion rate for first-time, full-time bachelor's-degree-seeking
+#&gt;  students at four-year institutions (200% of expected time to
+#&gt;  completion)
+#&gt; 
+#&gt; VALUES: NA
+#&gt; 
+#&gt; 
+#&gt; ---------------------------------------------------------------------
+#&gt; varname: c200_l4                                 category: completion
+#&gt; ---------------------------------------------------------------------
+#&gt; DEVELOPER FRIENDLY NAME:
+#&gt; 
+#&gt; completion_rate_less_than_4yr_200nt
+#&gt; 
+#&gt; DESCRIPTION:
+#&gt; 
+#&gt; Completion rate for first-time, full-time students at
+#&gt;  less-than-four-year institutions (200% of expected time to
+#&gt;  completion)
+#&gt; 
+#&gt; VALUES: NA
+#&gt; 
+#&gt; 
+#&gt; ---------------------------------------------------------------------
+#&gt; varname: d200_4                                  category: completion
+#&gt; ---------------------------------------------------------------------
+#&gt; DEVELOPER FRIENDLY NAME:
+#&gt; 
+#&gt; completion_cohort_4yr_200nt
+#&gt; 
+#&gt; DESCRIPTION:
+#&gt; 
+#&gt; Adjusted cohort count for completion rate at four-year institutions
+#&gt;  (denominator of 200% completion rate)
+#&gt; 
+#&gt; VALUES: NA
+#&gt; 
+#&gt; 
+#&gt; ---------------------------------------------------------------------
+#&gt; varname: d200_l4                                 category: completion
+#&gt; ---------------------------------------------------------------------
+#&gt; DEVELOPER FRIENDLY NAME:
+#&gt; 
+#&gt; completion_cohort_less_than_4yr_200nt
+#&gt; 
+#&gt; DESCRIPTION:
+#&gt; 
+#&gt; Adjusted cohort count for completion rate at less-than-four-year
+#&gt;  institutions (denominator of 200% completion rate)
+#&gt; 
+#&gt; VALUES: NA
+#&gt; 
+#&gt; 
+#&gt; ---------------------------------------------------------------------
 #&gt; varname: ret_ft4                                    category: student
 #&gt; ---------------------------------------------------------------------
 #&gt; DEVELOPER FRIENDLY NAME:
@@ -6949,6 +7011,84 @@ dictionary. Returns <code>TRUE</code> or <code>FALSE</code>.</p></td>
 #&gt; 
 #&gt; First-time, part-time student retention rate at less-than-four-year
 #&gt;  institutions
+#&gt; 
+#&gt; VALUES: NA
+#&gt; 
+#&gt; 
+#&gt; ---------------------------------------------------------------------
+#&gt; varname: c200_4_pooled                           category: completion
+#&gt; ---------------------------------------------------------------------
+#&gt; DEVELOPER FRIENDLY NAME:
+#&gt; 
+#&gt; completion_rate_4yr_200nt_pooled
+#&gt; 
+#&gt; DESCRIPTION:
+#&gt; 
+#&gt; Completion rate for first-time, full-time bachelor's-degree-seeking
+#&gt;  students at four-year institutions (200% of expected time to
+#&gt;  completion), pooled for two year rolling averages
+#&gt; 
+#&gt; VALUES: NA
+#&gt; 
+#&gt; 
+#&gt; ---------------------------------------------------------------------
+#&gt; varname: c200_l4_pooled                          category: completion
+#&gt; ---------------------------------------------------------------------
+#&gt; DEVELOPER FRIENDLY NAME:
+#&gt; 
+#&gt; completion_rate_less_than_4yr_200nt_pooled
+#&gt; 
+#&gt; DESCRIPTION:
+#&gt; 
+#&gt; Completion rate for first-time, full-time students at
+#&gt;  less-than-four-year institutions (200% of expected time to
+#&gt;  completion), pooled for two year rolling averages
+#&gt; 
+#&gt; VALUES: NA
+#&gt; 
+#&gt; 
+#&gt; ---------------------------------------------------------------------
+#&gt; varname: poolyrs200                              category: completion
+#&gt; ---------------------------------------------------------------------
+#&gt; DEVELOPER FRIENDLY NAME:
+#&gt; 
+#&gt; pooled_yrs_used_200
+#&gt; 
+#&gt; DESCRIPTION:
+#&gt; 
+#&gt; Years used for rolling averages of completion rate C200_[4/L4]_POOLED
+#&gt; 
+#&gt; VALUES: NA
+#&gt; 
+#&gt; 
+#&gt; ---------------------------------------------------------------------
+#&gt; varname: d200_4_pooled                           category: completion
+#&gt; ---------------------------------------------------------------------
+#&gt; DEVELOPER FRIENDLY NAME:
+#&gt; 
+#&gt; completion_cohort_4yr_200nt_pooled
+#&gt; 
+#&gt; DESCRIPTION:
+#&gt; 
+#&gt; Adjusted cohort count for completion rate at four-year institutions
+#&gt;  (denominator of 200% completion rate), pooled for two-year rolling
+#&gt;  averages
+#&gt; 
+#&gt; VALUES: NA
+#&gt; 
+#&gt; 
+#&gt; ---------------------------------------------------------------------
+#&gt; varname: d200_l4_pooled                          category: completion
+#&gt; ---------------------------------------------------------------------
+#&gt; DEVELOPER FRIENDLY NAME:
+#&gt; 
+#&gt; completion_cohort_less_than_4yr_200nt_pooled
+#&gt; 
+#&gt; DESCRIPTION:
+#&gt; 
+#&gt; Adjusted cohort count for completion rate at less-than-four-year
+#&gt;  institutions (denominator of 200% completion rate), pooled for
+#&gt;  two-year rolling averages
 #&gt; 
 #&gt; VALUES: NA
 #&gt; 
@@ -25340,6 +25480,21 @@ dictionary. Returns <code>TRUE</code> or <code>FALSE</code>.</p></td>
 #&gt; 
 #&gt; 
 #&gt; ---------------------------------------------------------------------
+#&gt; varname: gt_28k_p10                                category: earnings
+#&gt; ---------------------------------------------------------------------
+#&gt; DEVELOPER FRIENDLY NAME:
+#&gt; 
+#&gt; 10_yrs_after_entry.percent_greater_than_28000
+#&gt; 
+#&gt; DESCRIPTION:
+#&gt; 
+#&gt; Share of students earning over $28,000/year (threshold earnings) 10
+#&gt;  years after entry
+#&gt; 
+#&gt; VALUES: NA
+#&gt; 
+#&gt; 
+#&gt; ---------------------------------------------------------------------
 #&gt; varname: mn_earn_wne_inc1_p10                      category: earnings
 #&gt; ---------------------------------------------------------------------
 #&gt; DEVELOPER FRIENDLY NAME:
@@ -25727,6 +25882,21 @@ dictionary. Returns <code>TRUE</code> or <code>FALSE</code>.</p></td>
 #&gt; 
 #&gt; 
 #&gt; ---------------------------------------------------------------------
+#&gt; varname: gt_28k_p6                                 category: earnings
+#&gt; ---------------------------------------------------------------------
+#&gt; DEVELOPER FRIENDLY NAME:
+#&gt; 
+#&gt; 6_yrs_after_entry.percent_greater_than_28000
+#&gt; 
+#&gt; DESCRIPTION:
+#&gt; 
+#&gt; Share of students earning over $28,000/year (threshold earnings) 6
+#&gt;  years after entry
+#&gt; 
+#&gt; VALUES: NA
+#&gt; 
+#&gt; 
+#&gt; ---------------------------------------------------------------------
 #&gt; varname: mn_earn_wne_inc1_p6                       category: earnings
 #&gt; ---------------------------------------------------------------------
 #&gt; DEVELOPER FRIENDLY NAME:
@@ -26062,6 +26232,21 @@ dictionary. Returns <code>TRUE</code> or <code>FALSE</code>.</p></td>
 #&gt; DESCRIPTION:
 #&gt; 
 #&gt; Share of students earning over $25,000/year (threshold earnings) 8
+#&gt;  years after entry
+#&gt; 
+#&gt; VALUES: NA
+#&gt; 
+#&gt; 
+#&gt; ---------------------------------------------------------------------
+#&gt; varname: gt_28k_p8                                 category: earnings
+#&gt; ---------------------------------------------------------------------
+#&gt; DEVELOPER FRIENDLY NAME:
+#&gt; 
+#&gt; 8_yrs_after_entry.percent_greater_than_28000
+#&gt; 
+#&gt; DESCRIPTION:
+#&gt; 
+#&gt; Share of students earning over $28,000/year (threshold earnings) 8
 #&gt;  years after entry
 #&gt; 
 #&gt; VALUES: NA
@@ -28236,7 +28421,7 @@ dictionary. Returns <code>TRUE</code> or <code>FALSE</code>.</p></td>
 #&gt; 
 #&gt; VALUES: NA
 #&gt; 
-#&gt; Printed information for 1835 of out 1835 variables.
+#&gt; Printed information for 1847 of out 1847 variables.
 #&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

@@ -1,3 +1,6 @@
+# rscorecard 0.10.0
+- update dictionary for 28 September 2018 release of data
+
 # rscorecard 0.9.0
 
 ## Potentially breaking changes
