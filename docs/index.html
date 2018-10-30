@@ -35,7 +35,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">rscorecard</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.10.0</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.11.0</span>
       </span>
     </div>
 
@@ -107,7 +107,7 @@
 <p>Install the latest released version from CRAN with</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">'rscorecard'</span>)</a></code></pre></div>
 <p>Install the latest development version from Github with</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">'btskinner/rscorecard'</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">'btskinner/rscorecard'</span>)</a></code></pre></div>
 <p>This package relies on the Scorecard data dictionary, so I will attempt to update it in a timely fashion whenever new Scorecard data are released. Because it sometimes takes a few days to get a package on CRAN, you may want to download the developmental version in the days immediately following a data update.</p>
 </div>
 <div id="usage" class="section level2">
@@ -116,7 +116,7 @@
 <div id="set-api-key" class="section level3">
 <h3 class="hasAnchor">
 <a href="#set-api-key" class="anchor"></a>Set API key</h3>
-<p>Get your Data.gov API key at <a href="https://api.data.gov/signup/" class="uri">https://api.data.gov/signup/</a>. Save your key in your R environment at the start of your R session using <code><a href="reference/sc_key.html">sc_key()</a></code>:</p>
+<p>Get your Data.gov API key at <a href="https://api.data.gov/signup/">https://api.data.gov/signup/</a>. Save your key in your R environment at the start of your R session using <code><a href="reference/sc_key.html">sc_key()</a></code>:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="co">## use your real key in place of the Xs</span></a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw"><a href="reference/sc_key.html">sc_key</a></span>(<span class="st">'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'</span>)</a></code></pre></div>
 </div>
@@ -139,8 +139,8 @@
 ## 2 Morrisville State College                               NY     196051  2013
 ## 3 Paul Smiths College of Arts and Science                 NY     194392  2013
 ## 4 Wells College                                           NY     197230  2013
-## 5 Pennsylvania State University-Penn State Wilkes-Barre   PA     214643  2013
-## 6 Houghton College                                        NY     191676  2013</code></pre>
+## 5 Houghton College                                        NY     191676  2013
+## 6 Pennsylvania State University-Penn State Wilkes-Barre   PA     214643  2013</code></pre>
 <p>For more example calls, see the <a href="http://btskinner.me/rscorecard">extended vignette</a>.</p>
 </div>
 <div id="data-dictionary" class="section level3">

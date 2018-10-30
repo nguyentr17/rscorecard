@@ -71,8 +71,9 @@ for(i in 1:nrow(tmp)) {
 }
 
 ## save to sysdata.R
-devtools::use_data(dict, sc_hash, pkg = '..', overwrite = TRUE, internal = TRUE)
-
+## devtools::use_data(dict, sc_hash, pkg = '..', overwrite = TRUE, internal = TRUE)
+usethis::proj_set('..', quiet = TRUE)
+usethis::use_data(dict, sc_hash, overwrite = TRUE, internal = TRUE)
 
 
 
