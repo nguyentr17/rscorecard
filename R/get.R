@@ -178,7 +178,7 @@ sc_get <- function(sccall, api_key, debug = FALSE, print_key_debug = FALSE) {
                          'root' %+|%
                          'school' %+|%
                          'student' %+% ')\\.'
-            sc_hash[[gsub(re, '', x)]]},
+            sc_hash[[sub(re, '', x)]]},
             character(1), USE.NAMES = FALSE
             )
     }
